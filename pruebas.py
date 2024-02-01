@@ -1,44 +1,36 @@
-#Script Para ejecutar Funciones de Prueba
+from pysnmp.entity.rfc3413.oneliner import cmdgen
 
-import numpy as np
+cmdGen = cmdgen.CommandGenerator()
 
-import logging
-logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
-from scapy.all import ARP, Ether, srp
+def get_active_interfaces(ip_addresses):
+    interfaces_dict = {}
 
-def scan(ip):
-    # Crear una solicitud ARP dirigida a la dirección IP proporcionada
-    arp_request = ARP(pdst=ip)
-    
-    # Crear un paquete Ethernet para enviar la solicitud ARP
-    ether = Ether(dst="ff:ff:ff:ff:ff:ff")
-    
-    # Combinar el paquete Ethernet y la solicitud ARP
-    packet = ether/arp_request
-    
-    # Enviar el paquete y recibir respuestas
-    result = srp(packet, timeout=6, verbose=0)[0]
-    
-    # Analizar las respuestas
-    devices = []
-    for sent, received in result:
-        devices.append({'ip': received.psrc, 'mac': received.hwsrc})
-    
-    return devices
+    for ip_address in ip_addresses:
+        error_indication, error_status, error_index, var_bind_table = cmdGen.nextCmd(
+            cmdgen.CommunityData('public'),
+            cmdgen.UdpTransportTarget((ip_address, 161)),
+            '1.3.6.1.2.1.2.2.1.8',  # ifAdminStatus
+            lexicographicMode=False
+        )
 
-def main():
-    # Especificar el rango de direcciones IP que deseas escanear
-    target_ip = "192.168.20.1/24"
-    
-    # Realizar el escaneo
-    devices = scan(target_ip)
-    
-    # Mostrar los dispositivos encontrados
-    print("Dispositivos activos en la red:")
-    print("IP\t\t\tMAC Address")
-    print("-----------------------------------------")
-    for device in devices:
-        print(f"{device['ip']}\t\t{device['mac']}")
+        error_indication, error_status, error_index, var_bind_table1 = cmdGen.nextCmd(
+            cmdgen.CommunityData('public'),
+            cmdgen.UdpTransportTarget((ip_address, 161)),
+            '1.3.6.1.2.1.2.2.1.2',  # ifDescr
+            lexicographicMode=False
+        )
+
+        active_interfaces = [val1.prettyPrint() for row, row1 in zip(var_bind_table, var_bind_table1) 
+                             for (_, val), (_, val1) in zip(row, row1) if val.prettyPrint() == '1' and val1.prettyPrint() != "Null0"]
+
+        interfaces_dict[ip_address] = active_interfaces
+
+    return interfaces_dict
 
 if __name__ == "__main__":
-    main()
+    ip_addresses_to_check = ['192.168.1.1', '192.168.1.2']  # Reemplaza con tus direcciones IP
+
+    result_dict = get_active_interfaces(ip_addresses_to_check)
+
+    for ip, interfaces in result_dict.items():
+        print(f"Dirección IP: {ip}, Interfaces Activas: {', '.join(interfaces)}")
