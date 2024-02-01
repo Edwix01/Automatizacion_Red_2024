@@ -86,7 +86,6 @@ informacion_switches = {}
 for n in range(1, 5):
     server_ip='192.168.20.{0}'.format(n)
     mac_table_result = get_mac_table(server_ip)
-    print(mac_table_result)
     puertos = obtener_mac_puertos_switch(server_ip)
     informacion_switches[server_ip] = {}
     informacion_switches[server_ip]['tabla_mac'] = mac_table_result
@@ -111,7 +110,6 @@ def con_conex(infosw):
             for z in c_tabmacs.values():
                 if z in c_ports:
                    clav = encontrar_clave_por_valor(c_tabmacs, z)
-                   print('ESta conectado',i,j)
                    #mc[i,j] = clav
                    mc[i,j] = 1
 
@@ -141,4 +139,5 @@ def graficar_topologia(matriz_adyacencia):
     plt.title("Topología de la Red")
     plt.show()
 
+graficar_topologia(con_conex(informacion_switches))
 
