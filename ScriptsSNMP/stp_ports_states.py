@@ -36,10 +36,9 @@ def stp_act(dir_ip):
         for varBindTableRow1 in varBindTable1:
             for name1, val1 in varBindTableRow1:
                 if (estado[c] == 1):
-                    inte.append(val1.prettyPrint())
+                    intef[server_ip] = val1.prettyPrint()
                 c = c+1
 
-        intef[server_ip] = inte
+
     return intef
 
-print(stp_act(['192.168.20.1','192.168.20.2','192.168.20.3','192.168.20.4']))
