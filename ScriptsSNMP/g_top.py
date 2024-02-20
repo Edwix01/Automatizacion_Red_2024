@@ -1,12 +1,12 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-
+import numpy as np
 def generar_grafo_conexiones(matriz):
     G = nx.Graph()
 
     # Agregar nodos principales (dispositivos) con etiquetas personalizadas
     for i in range(len(matriz)):
-        etiqueta_dispositivo = f"S_{i}"
+        etiqueta_dispositivo = f"S_{i+1}"
         G.add_node(i, etiqueta=etiqueta_dispositivo, size=1500, color='blue')
 
     # Agregar subnodos y conexiones con etiquetas personalizadas
@@ -19,16 +19,29 @@ def generar_grafo_conexiones(matriz):
     # Agregar conexiones entre subnodos según la matriz
     for i in range(len(matriz)):
         for j in range(len(matriz[i])):
-            conexion = matriz[i][j]
+            conexion = matriz[i,j]
             if conexion != 0:
-                a = matriz[i][j]
-                b = matriz[j][i]
+                a = matriz[i,j]
+                b = matriz[j,i]
                 subnodo_i = f"{i}-{a}"
                 subnodo_j = f"{j}-{b}"
                 G.add_edge(subnodo_i, subnodo_j)
                 G.nodes[subnodo_i]['color'] = 'green'
                 G.nodes[subnodo_j]['color'] = 'green'
     return G
+
+
+
+def ac_pu(G,stp_p,matriz):
+    for i in stp_p:
+        x,x1 = i
+        y = matriz[x,x1]
+        subnodo_a = f"{x}-{y}"
+        print(subnodo_a)
+        G.nodes[subnodo_a]['color'] = 'yellow'
+
+    G1=G
+    return G1
 
 def dibujar_grafo(G):
     pos = nx.spring_layout(G, seed=42)
@@ -41,13 +54,16 @@ def dibujar_grafo(G):
     plt.show()
 
 # Ejemplo de matriz de conexiones
-matriz = [[0, 2, 3, 0],
+matriz = np.array([[0, 2, 3, 0],
           [2, 0, 4, 3],
           [3, 4, 0, 2],
-          [0, 3, 2, 0]]
+          [0, 3, 2, 0]])
 
-# Generar el grafo con las conexiones
+a = {1: (0, 1), 4: (3, 1)}
+
+
 grafo = generar_grafo_conexiones(matriz)
+g_aux = ac_pu(grafo,a.values(),matriz)
 
 # Dibujar el grafo
-dibujar_grafo(grafo)
+dibujar_grafo(g_aux)
