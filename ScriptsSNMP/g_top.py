@@ -28,7 +28,6 @@ def generar_grafo_conexiones(matriz):
                 G.add_edge(subnodo_i, subnodo_j)
                 G.nodes[subnodo_i]['color'] = 'green'
                 G.nodes[subnodo_j]['color'] = 'green'
-
     return G
 
 def dibujar_grafo(G):
