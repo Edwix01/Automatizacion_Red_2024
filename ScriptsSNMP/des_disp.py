@@ -20,6 +20,6 @@ def dis_act(barra,i,s):
     return da
 
 #Puebas de la funcion
-if __name__ == "__main__":
-    print(dis_act("192.168.20.1",1,6))
+#if __name__ == "__main__":
+#    print(dis_act("192.168.20.1",1,6))
     
