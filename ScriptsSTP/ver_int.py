@@ -56,22 +56,24 @@ def tab_macs(dir):
         ma[ip] = res
     return ma
 
-def desg_bridge(ips,ma,macs,tabmacs):
+def desg_bridge(ips,ma,macs,tabmacs,stpp):
         n = len(ma)-1
         mauc = ma
         for i in range(n+1):
             for j in range(n+1):
                 if (((ma[i,j] != 0) or (ma[j,i] != 0)) and (i!=j)):
                     for u in macs[ips[i]]:
-                        if "0cb3.1dd0.0004" in tabmacs[ips[j]]:
-                            del tabmacs[ips[j]]["0cb3.1dd0.0004"]
+                        for h in stpp:
+                            if h in tabmacs[ips[j]]:
+                                del tabmacs[ips[j]][h]
                         
-                        if "0cda.c7c6.0001" in tabmacs[ips[j]]:
-                            del tabmacs[ips[j]]["0cda.c7c6.0001"]
-                        print(u)
-                        print(tabmacs[ips[j]])
-
                         if u in tabmacs[ips[j]]:
                             mauc[i,j] = tabmacs[ips[j]][u]
-        
+                            """
+                            print(""*20)
+                            print(u)
+                            print(tabmacs[ips[j]])
+                            print(""*20)
+                            print(np.transpose(mauc.astype(int)))             
+                            """
         return mauc.astype(int)

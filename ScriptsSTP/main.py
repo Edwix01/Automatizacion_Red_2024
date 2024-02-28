@@ -9,7 +9,7 @@ import numpy as np
 import blkstp
 import up_mconex
 import info_int
-
+import stp_blk
 
 
 """
@@ -45,9 +45,9 @@ t1 = ver_int.tab_macs(direc)
 
 #Establecer conexiones con especificacion de los puertos
 #conectados
-mf = np.transpose(ver_int.desg_bridge(direc,m,mas,t))
 
-print(mf)
+pstp = stp_blk.dstp_act(direc)
+mf = np.transpose(ver_int.desg_bridge(direc,m,mas,t,pstp))
 
 #Obtener puertos bloqueados por stp
 psblk = blkstp.stp_act(direc)
@@ -63,7 +63,5 @@ print(maa)
 grafo = gtop.generar_grafo_conexiones(maa)
 gr = gtop.ac_pu(grafo,lstp)
 gtop.dibujar_grafo(gr)
-
-
 
 gra.gr(m)

@@ -11,7 +11,5 @@ def upm(ips,matriz,pstp,bids,inf,tmac):
         g = inf[ip][(pstp[ip][0])]
         g1 = tmac[claves[0]][g]
         m_a[j,i] = g1
-
         p_stp.append((i,pstp[ip][0]))
-
     return m_a,p_stp

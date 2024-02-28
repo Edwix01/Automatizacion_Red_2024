@@ -10,7 +10,7 @@ def desg_bridge(ips,in_fa):
             cmdgen.CommunityData('public'),
             cmdgen.UdpTransportTarget((ip, 161)),
             0,25,
-            ' 1.3.6.1.2.1.17.2.15.1.8'
+            '1.3.6.1.2.1.17.2.15.1.8'
             #'1.3.6.1.2.1.2'
         ) 
         inte = []

@@ -13,7 +13,7 @@ def stp_act(dir_ip):
             0,16,
             '1.3.6.1.2.1.17.2.15.1.1' #OID del Puerto STP
         )
-
+        
         errorIndication1, errorStatus1, errorIndex1, varBindTable = cmdGen.bulkCmd(
             cmdgen.CommunityData('public'),
             cmdgen.UdpTransportTarget((server_ip, 161)),
@@ -62,4 +62,3 @@ def stp_act(dir_ip):
         if f == 1:
             intef[server_ip]= res
     return intef
-
