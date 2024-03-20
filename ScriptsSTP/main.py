@@ -10,7 +10,7 @@ import blkstp
 import up_mconex
 import info_int
 import stp_blk
-
+import des_disp
 
 """
 En esta seccion se ejecutan los procesos necesarios para 
@@ -18,28 +18,37 @@ el descrubrimiento de la topologia
 """
 
 #Descubrir dispositivos Activos
-direc = ["192.168.20.1","192.168.20.2","192.168.20.3","192.168.20.4","192.168.20.5","192.168.20.6"]
-
+comunidad = "$1$5.v/c/$"
+direc = des_disp.in_des()
 #Descubrir Interfaces activas 
-d = (des_int_act.in_act(direc))
+d = (des_int_act.in_act(direc,comunidad))
+direc = d.keys()
 
+"""
 #Obtener los bridges designados por cada puerto activo
-a = desig_stp.desg_bridge(direc,d)
+a = desig_stp.desg_bridge(d,comunidad)
+print(a)
+#Obtener ID Bridge de cad2
+# a conmutador en la red
+e = bridge_id.bri_id(direc,comunidad)
+print(e)
 
-#Obtener ID Bridge de cada conmutador en la red
-e = bridge_id.bri_id(direc)
 
 #Establecer primera aproximacion de conexiones entre dispositivos
 #No existe informacion de los puertos
 m = conex.con_com(direc,e,a)
-
+gra.gr(m)
+"""
 
 #Obtener la mac de cada una de las interfaces de los dispositivos
-mas =  ver_int.get_macs(direc)
+mas =  ver_int.get_macs(direc,comunidad)
+print(mas)
+
 
 #Obtener la tabla de direcciones Macs de cada conmutador
-t = ver_int.tab_macs(direc)
-
+t = ver_int.tab_macs(direc,comunidad)
+print(t)
+"""
 #Copia de las tablas macs
 t1 = ver_int.tab_macs(direc)
 
@@ -63,5 +72,4 @@ print(maa)
 grafo = gtop.generar_grafo_conexiones(maa)
 gr = gtop.ac_pu(grafo,lstp)
 gtop.dibujar_grafo(gr)
-
-gra.gr(m)
+"""

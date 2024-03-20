@@ -2,39 +2,31 @@ from pysnmp.entity.rfc3413.oneliner import cmdgen
 
 cmdGen = cmdgen.CommandGenerator()
 
-def in_act(dir_ip):
+def in_act(dir_ip,com_snmp):
     intef = {}
     for n in dir_ip:
+        f = 0
         server_ip=n
         errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
-            cmdgen.CommunityData('public'),
+            cmdgen.CommunityData(com_snmp),
             cmdgen.UdpTransportTarget((server_ip, 161)),
-            0,16,
-            '1.3.6.1.2.1.2.2.1.8'
+            0,25,
+            '1.3.6.1.2.1.2.2.1.8','1.3.6.1.2.1.2.2.1.2'
         )
-
-        errorIndication, errorStatus, errorIndex, varBindTable1 = cmdGen.bulkCmd(
-            cmdgen.CommunityData('public'),
-            cmdgen.UdpTransportTarget((server_ip, 161)),
-            0,16,
-            '1.3.6.1.2.1.2.2.1.2'
-        )
-        estado = []
         inte = []
         for varBindTableRow in varBindTable:
-            for name, val in varBindTableRow:
-                if (val.prettyPrint()) == '1':
-                    estado.append(1)
-                else:
-                    estado.append(0)
+            for name,val in varBindTableRow:
+                if (val == 1):
+                    inte.append((name.prettyPrint()).split('.')[-1])
 
-        c = 0
+                if ((str(val) == "Null0") or ("VLAN" in str(val)) or ("Vlan" in str(val)) or (("vlan" in str(val)))):
+                    try:
+                        inte.remove((name.prettyPrint()).split('.')[-1])
+                    except ValueError:
+                        pass
+        if (len(inte) > 0):
+            intef[n] = inte
 
-        for varBindTableRow1 in varBindTable1:
-            for name1, val1 in varBindTableRow1:
-                if (estado[c] == 1) and (val1.prettyPrint() != "Null0"):
-                    inte.append((name1.prettyPrint())[-1])
-                c = c+1
-        intef[n] = inte
     return intef
+
 

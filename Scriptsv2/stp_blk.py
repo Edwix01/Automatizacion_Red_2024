@@ -14,7 +14,6 @@ def stp_status(direc,stpi,comunidad):
         for varBindTableRow in varBindTable:
             for name, val in varBindTableRow:
                 if server_ip.split(".")[-1] in stpi.keys():
-
                     p = str(name).split(".")[-1]
                     lp = stpi[server_ip.split(".")[-1]]
                     if p in lp:

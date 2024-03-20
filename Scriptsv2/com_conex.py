@@ -14,10 +14,8 @@ def b_conex(direc,b_id,stp_in):
                 if b_id[i] == inf[0][p] and i!=j:
                 #in inf[1][c][0] COnexion de j
                 #in inf[1][c][1] COnexion de i
-
                     c_j = inf[1][c][0]
                     c_i = inf[1][c][1]
-                    #lc.append((ini+"."+c_i,inj+"."+c_j))
                     lc.append((ini+"."+hex_to_decimal(c_i[-2:]),inj+"."+c_j))
                 c += 1
 

@@ -3,12 +3,12 @@ import numpy as np
 cmdGen = cmdgen.CommandGenerator()
 import gtop
 
-def get_macs(dir):
+def get_macs(dir,comunidad):
     
     ma = {}
     for ip in dir:
         errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
-            cmdgen.CommunityData('public'),
+            cmdgen.CommunityData(comunidad),
             cmdgen.UdpTransportTarget((ip, 161)),
             0,25,
             '1.3.6.1.2.1.2.2.1.6'
@@ -22,19 +22,19 @@ def get_macs(dir):
         ma[ip] = inte
     return ma
 
-def tab_macs(dir):
+def tab_macs(dir,comunidad):
     
     ma = {}
     for ip in dir:
         errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
-            cmdgen.CommunityData('public'),
+            cmdgen.CommunityData(comunidad),
             cmdgen.UdpTransportTarget((ip, 161)),
             0,25,
             '1.3.6.1.2.1.17.4.3.1.1'
         ) 
 
         errorIndication1, errorStatus1, errorIndex1, varBindTable1 = cmdGen.bulkCmd(
-            cmdgen.CommunityData('public'),
+            cmdgen.CommunityData(comunidad),
             cmdgen.UdpTransportTarget((ip, 161)),
             0,25,
             '1.3.6.1.2.1.17.4.3.1.2'
