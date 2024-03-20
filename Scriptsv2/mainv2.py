@@ -8,17 +8,13 @@ import map_int
 import stp_blk
 import verstp
 
-
 # Ingreso de Parametros - Comunidad SNMP, Direcciones IP
-
 comunidad = "$1$5.v/c/$"
 direc = des_disp.in_des()
 
 #Detección de interfaces activas 
 d = (des_int_act.in_act(direc,comunidad))
 direc = d.keys() #Direcciones IP Filtradas
-
-info_int = map_int.ma_int(direc,comunidad)
 
 #Informacion STP
 # Bridge ID, Designed Bridge
@@ -45,5 +41,6 @@ nf = verstp.obtener_numeros_despues_del_punto(l)
 nodb=stp_blk.stp_status(direc,nf,comunidad)
 
 #Creación del grafo
+info_int = map_int.ma_int(direc,comunidad)
 grafo = gr.crear_grafo(direc, l, info_int,nodb)
 gr.dibujar_grafo(grafo)

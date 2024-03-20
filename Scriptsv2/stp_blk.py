@@ -9,11 +9,7 @@ def stp_status(direc,stpi,comunidad):
             cmdgen.CommunityData(comunidad),
             cmdgen.UdpTransportTarget((server_ip, 161)),
             0,25,
-            #'1.3.6.1.2.1.17.1.1',
             '1.3.6.1.2.1.17.2.15.1.3'
-            #'1.3.6.1.2.1.2.2.1.2'
-            #'1.3.6.1.2.1.2.2.1.6'
-            #'1.3.6.1.2.1.17.4.3.1.1'
         )
         for varBindTableRow in varBindTable:
             for name, val in varBindTableRow:

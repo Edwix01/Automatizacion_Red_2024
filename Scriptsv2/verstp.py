@@ -11,7 +11,6 @@ def obtener_numeros_despues_del_punto(conexiones):
             que contienen los números que siguen después del punto en las tuplas de conexiones.
     """
     numeros_despues_del_punto = {}
-
     for tupla in conexiones:
         # Para el primer elemento de la tupla
         clave = tupla[0].split('.')[0]
