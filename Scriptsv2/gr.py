@@ -1,11 +1,25 @@
 import networkx as nx
 import matplotlib.pyplot as plt
-import random
-
 import networkx as nx
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 
-def crear_grafo(direcciones, conexiones, etiquetas, colores,nodb):
+# Grafico de la topologia
+# Definir colores pastel predefinidos
+colores_pastel = {
+    'pastel_blue': mcolors.CSS4_COLORS['lightblue'],    # Azul pastel
+    'pastel_green': mcolors.CSS4_COLORS['lightgreen'],  # Verde pastel
+    'pastel_yellow': mcolors.CSS4_COLORS['lightcoral'] # Amarillo pastel
+}
+
+# Reemplazar los colores en colores_nodos con colores pastel
+colores= {
+    'principal': colores_pastel['pastel_blue'],   # Azul pastel para nodos principales
+    'subnodo': colores_pastel['pastel_green'],    # Verde pastel para subnodos
+    'subnodob': colores_pastel['pastel_yellow']   # Amarillo pastel para subnodos
+}
+
+def crear_grafo(direcciones, conexiones, etiquetas,nodb):
     # Crear un nuevo grafo dirigido
     G = nx.DiGraph()
 
@@ -47,5 +61,11 @@ def crear_grafo(direcciones, conexiones, etiquetas, colores,nodb):
     return G
 
 
+
+def dibujar_grafo(grafo):
+    tamanos_nodos = [grafo.nodes[nodo]['size'] for nodo in grafo.nodes()]
+    posiciones = nx.spring_layout(grafo,seed=42)
+    nx.draw(grafo, pos=posiciones, with_labels=True, labels=nx.get_node_attributes(grafo, 'label'), node_size=tamanos_nodos, node_color=[grafo.nodes[nodo]['color'] for nodo in grafo.nodes()], font_size=8, font_weight='bold',font_family="serif")
+    plt.show()
 
 
