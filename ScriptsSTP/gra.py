@@ -10,3 +10,4 @@ def gr(matriz):
     # Dibujar el gráfico
     nx.draw(G, with_labels=True, node_color='lightblue', node_size=1000, font_size=10)
     plt.show()
+
