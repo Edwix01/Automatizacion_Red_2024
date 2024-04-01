@@ -1,4 +1,4 @@
-import bid
+import b_id
 import stp_info
 import com_conex
 import des_disp
@@ -19,7 +19,7 @@ direc = ["192.168.20.1","192.168.20.2","192.168.20.3","192.168.20.4","192.168.20
 print("Ejecutando fase 2")
 #Informacion STP
 # Bridge ID, Designed Bridge
-b_id = bid.bri_id(direc,comunidad)
+b_id = b_id.bri_id(direc,comunidad)
 st_inf = stp_info.stp_inf(direc,comunidad)
 
 #Fase 3 

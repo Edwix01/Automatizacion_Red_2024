@@ -33,7 +33,6 @@ st_inf = stp_info.stp_inf(direc,datos)
 #Proceso extra para conmutadores TPLINK
 f.epmiko(credenciales[iptp[0]]["usuario"],credenciales[iptp[0]]["contraseña"], iptp)
 tp_d = leer.fil_bid("b_id.txt")
-b_root = "c02c17093c00"
 stn = tp_linkssh.tplink_id(b_root,st_inf,tp_d) 
 
 print("Ejecutando Fase 3")
