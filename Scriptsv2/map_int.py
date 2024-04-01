@@ -3,8 +3,9 @@ import re
 cmdGen = cmdgen.CommandGenerator()
 d2={}
 
-def ma_int(direc,comunidad):
+def ma_int(direc,datos):
     for server_ip in direc:
+        comunidad = datos[server_ip]["snmp"]
         errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
             cmdgen.CommunityData(comunidad),
             cmdgen.UdpTransportTarget((server_ip, 161)),
@@ -20,7 +21,10 @@ def ma_int(direc,comunidad):
                     cadena = val.prettyPrint()
                     # Utilizar una expresión regular para encontrar solo los números y barras
                     numeros = re.sub(r'[^\d/]', '', cadena)
-                    d1[str(c)] = cadena[0] + numeros
+                    if datos[server_ip]["marca"] == "tplink":
+                        d1[str(name).split(".")[-1]] = cadena[0] + numeros
+                    else:
+                        d1[str(c)] = cadena[0] + numeros
                     c+=1
         d2[str(server_ip.split(".")[-1])] = d1
     return d2

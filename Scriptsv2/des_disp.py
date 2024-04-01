@@ -6,7 +6,7 @@ import subprocess
 def check_device_availability(ip):
     try:
         # Ejecutar el comando ping con un timeout de 2 segundos
-        subprocess.run(["ping", "-n", "1", "-w", "2000", ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
+        subprocess.run(["ping", "-c", "1", "-W", "2", ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)
         return True
     except subprocess.CalledProcessError:
         return False
