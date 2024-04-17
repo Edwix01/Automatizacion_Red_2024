@@ -117,7 +117,7 @@ while True:
     #---------------------------------------
 
     #print(dinac)
-    if ci == 6:
+    if ci == 10:
         dinac = {clave: 0 for clave in direc}
         ci = 0
 
@@ -156,7 +156,7 @@ while True:
         epint: estado pasado: Lista con estado de las interfaces de los dispositivos
     """
 
-    if c == 3:
+    if c == 5:
       ci += 1
      # print(epint)
       eaint,fsi,fifi = mon_int(list(eaping))
@@ -182,11 +182,10 @@ while True:
         print("Se ejecuto el descubrimiento de Interfaces")
         #print(enr)
         #print(enr1)
-        print(cp)
+        #print(cp)
         ca,fsnmp,dfsnmp1 = mainepops.main_top(list(eaping))
-
         dfsnmp = dtsnmp.snmt(dfsnmp1,fifi)
-        print(ca)
+        #print(ca)
         #print("DIccionario SNMP")
         #print(disnmp)
         #print("-"*20)
