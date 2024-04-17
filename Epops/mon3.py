@@ -104,13 +104,13 @@ while True:
                 diint[i] += 1
     #---------------------------------------
        print("Se bajo conexión")
-       time.sleep(5)
+       time.sleep(10)
        eaping,inactivos,f = verificar_hosts(direc)
 
 
     #Proceso para contar interrumpciones rapidas
     for x in direc:
-        if dinac[x] >= 3:
+        if dinac[x] >= 5:
             teleg.enviar_mensaje("Se ha tenido Varias interrumpciones con el dispositivo: "+x)
             dinac[x] = 0
 
