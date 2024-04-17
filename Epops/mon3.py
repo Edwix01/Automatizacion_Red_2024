@@ -84,7 +84,7 @@ while True:
     fsi = 0
     fping = 0 
     diesnmp = []
-    faux = 1
+    faux = 0
     fp = 0
     print("Monitoreando")
 
@@ -93,7 +93,9 @@ while True:
        eaping: estado actual - Lista de con dispositivos con ping exitoso
        epping: estado pasado - Lista de con dispositivos con ping exitoso
     """
-    #print(epping)
+    print("")
+    print(" -------------ep,ea Control de monitoreo por PINGS ----------")
+    print(epping)
     eaping,inactivos,fping = verificar_hosts(direc)
     #print(diest)
     #Perdido de Conexion Mayor a 10seg
@@ -122,12 +124,13 @@ while True:
         dinac = {clave: 0 for clave in direc}
         ci = 0
 
-    #print(eaping)
-
+    print(eaping)
+    print("------------------------------------------------------------------------------------")
+    print("")
     if eaping != epping:
         print("Se comparo lista de pings - Listas Diferentes")
         fp = 1
-        faux = 0
+        faux = 1
         if len(eaping) < len(epping):
             conjunto1 = {tuple(sorted(tup)) for tup in eaping}
             conjunto2 = {tuple(sorted(tup)) for tup in epping}
@@ -157,16 +160,17 @@ while True:
         epint: estado pasado: Lista con estado de las interfaces de los dispositivos
     """
 
-    if c == 5:
-      ci += 1
-     # print(epint)
-      eaint,fsi,diesnmp = mon_int(list(eaping))
-     # print(eaint)
-      if eaint != epint and faux == 1:
-        print("Se comparo lista de interfaces - Listas Diferentes")
-        fp = 1
-      epint=eaint
-      c = 0
+    if c == 5 :
+        ci += 1
+        c = 0
+        if faux == 0:
+        # print(epint)
+            eaint,fsi,diesnmp = mon_int(list(eaping))
+        # print(eaint)
+        if eaint != epint:
+            print("Se comparo lista de interfaces - Listas Diferentes")
+            fp = 1
+        epint=eaint
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--Descubrir Topologia ---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -188,7 +192,11 @@ while True:
         dfsnmp = dtsnmp.snmt(dfsnmp1,diesnmp)
         #print(ca)
         #print("DIccionario SNMP")
-        #print(disnmp)
+        print("")
+        print("-------------------disnp,fsnmp,fsi----Control de error de snmp-----------------------")
+        print(disnmp,fsnmp,fsi)
+        print("------------------------------------------------------------------------------------")
+        print("")
         #print("-"*20)
         #Control de fallas de conexiones con SNMP
         if fsnmp == 1 or fsi == 1:
@@ -255,7 +263,6 @@ while True:
                 else:
                     a = "Se perdió la conexión entre los equipos\n"+tupa[0].split("-")[0]+"\n"+tupa[1].split("-")[0]+"\n"
                 teleg.enviar_mensaje(a)
-        fp=0
         #Identificacion de enlaces redundantes
         enr,enr1 = con_red.id_red(ca)
     #-----------------------------------------Fin de Descubrimiento de topologia--------------------------------------------------------
