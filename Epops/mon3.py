@@ -82,6 +82,7 @@ teleg.enviar_mensaje("INICIANDO SISTEMA \n")
 while True:
     fsnmp = 0
     fsi = 0
+    fping = 0 
     fifi = []
     f1 = 1
     f = 0
@@ -93,10 +94,10 @@ while True:
        epping: estado pasado - Lista de con dispositivos con ping exitoso
     """
     #print(epping)
-    eaping,inactivos,f = verificar_hosts(direc)
+    eaping,inactivos,fping = verificar_hosts(direc)
     #print(diest)
     #Perdido de Conexion Mayor a 10seg
-    if f == 1:
+    if fping == 1:
     #Proceso para contar interrumpciones rapidas
        for i in inactivos:
            if diest[i] == 0:
