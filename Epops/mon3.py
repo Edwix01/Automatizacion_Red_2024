@@ -83,9 +83,9 @@ while True:
     fsnmp = 0
     fsi = 0
     fping = 0 
-    fifi = []
-    f1 = 1
-    f = 0
+    diesnmp = []
+    faux = 1
+    fp = 0
     print("Monitoreando")
 
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--Monitoreo por Ping--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,7 +106,7 @@ while True:
     #---------------------------------------
        print("Se bajo conexión")
        time.sleep(10)
-       eaping,inactivos,f = verificar_hosts(direc)
+       eaping,inactivos,fp = verificar_hosts(direc)
 
 
     #Proceso para contar interrumpciones rapidas
@@ -126,8 +126,8 @@ while True:
 
     if eaping != epping:
         print("Se comparo lista de pings - Listas Diferentes")
-        f = 1
-        f1 = 0
+        fp = 1
+        faux = 0
         if len(eaping) < len(epping):
             conjunto1 = {tuple(sorted(tup)) for tup in eaping}
             conjunto2 = {tuple(sorted(tup)) for tup in epping}
@@ -160,11 +160,11 @@ while True:
     if c == 5:
       ci += 1
      # print(epint)
-      eaint,fsi,fifi = mon_int(list(eaping))
+      eaint,fsi,diesnmp = mon_int(list(eaping))
      # print(eaint)
-      if eaint != epint and f1 == 1:
+      if eaint != epint and faux == 1:
         print("Se comparo lista de interfaces - Listas Diferentes")
-        f = 1
+        fp = 1
       epint=eaint
       c = 0
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -177,7 +177,7 @@ while True:
         ca: conexiones actuales - Lista de conexiones
     """
 
-    if f == 1:
+    if fp == 1:
         time.sleep(20)
         dfsnmp =[]
         print("Se ejecuto el descubrimiento de Interfaces")
@@ -185,7 +185,7 @@ while True:
         #print(enr1)
         #print(cp)
         ca,fsnmp,dfsnmp1 = mainepops.main_top(list(eaping))
-        dfsnmp = dtsnmp.snmt(dfsnmp1,fifi)
+        dfsnmp = dtsnmp.snmt(dfsnmp1,diesnmp)
         #print(ca)
         #print("DIccionario SNMP")
         #print(disnmp)
@@ -255,7 +255,7 @@ while True:
                 else:
                     a = "Se perdió la conexión entre los equipos\n"+tupa[0].split("-")[0]+"\n"+tupa[1].split("-")[0]+"\n"
                 teleg.enviar_mensaje(a)
-        f=0
+        fp=0
         #Identificacion de enlaces redundantes
         enr,enr1 = con_red.id_red(ca)
     #-----------------------------------------Fin de Descubrimiento de topologia--------------------------------------------------------
