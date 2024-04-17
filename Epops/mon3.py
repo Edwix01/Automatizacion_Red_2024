@@ -9,7 +9,7 @@ import teleg
 import obt_infyam
 import dtsnmp
 
-nombreyaml = "/home/du/Auto_Mon_2024_Cod/Automatizacion_Red_2024/epops/inventarios/dispositivos.yaml"
+nombreyaml = "/home/du/Automatizacion_Red_2024/Epops/inventarios/dispositivos.yaml"
 datos = obt_infyam.infyam(nombreyaml)
 direc = datos.keys()
 comunidad = datos[list(direc)[0]]["snmp"]
