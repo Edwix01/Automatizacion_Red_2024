@@ -140,10 +140,10 @@ while True:
         diferentes_en_eaping = eaping_set - epping_set
         for elemento in diferentes_en_epping:
             teleg.enviar_mensaje("Dispositivo sin acceso: "+str(elemento)+"\n")
-            diest[str(tupa)] = 1
+            diest[str(elemento)] = 1
         for elemento in diferentes_en_eaping:
             teleg.enviar_mensaje("Dispositivo nuevamente con acceso: "+str(elemento)+"\n")
-            diest[str(tupa)] = 0
+            diest[str(elemento)] = 0
     epping=eaping
 
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
