@@ -127,30 +127,25 @@ while True:
     print(eaping)
     print("------------------------------------------------------------------------------------")
     print("")
+
     if eaping != epping:
         print("Se comparo lista de pings - Listas Diferentes")
         fp = 1
         faux = 1
-        if len(eaping) < len(epping):
-            conjunto1 = {tuple(sorted(tup)) for tup in eaping}
-            conjunto2 = {tuple(sorted(tup)) for tup in epping}
-
-            # Eliminar los elementos de la tupla2 que coinciden con la tupla1
-            tupla2_filtrada = [tup for tup in epping if tuple(sorted(tup)) not in conjunto1]
-            for tupa in tupla2_filtrada:
-                teleg.enviar_mensaje("Dispositivo sin acceso: "+str(tupa)+"\n")
-                diest[str(tupa)] = 1
-
-        if len(eaping) > len(epping):
-            conjunto1 = {tuple(sorted(tup)) for tup in epping}
-            conjunto2 = {tuple(sorted(tup)) for tup in eaping}
-
-            # Eliminar los elementos de la tupla2 que coinciden con la tupla1
-            tupla2_filtrada = [tup for tup in eaping if tuple(sorted(tup)) not in conjunto1]
-            for tupa in tupla2_filtrada:
-                teleg.enviar_mensaje("Dispositivo nuevamente con acceso: "+str(tupa)+"\n")
-                diest[str(tupa)] = 0
+        # Convertir las listas a conjuntos
+        epping_set = set(epping)
+        eaping_set = set(eaping)
+        # Encontrar los elementos diferentes
+        diferentes_en_epping = epping_set - eaping_set
+        diferentes_en_eaping = eaping_set - epping_set
+        for elemento in diferentes_en_epping:
+            teleg.enviar_mensaje("Dispositivo sin acceso: "+str(elemento)+"\n")
+            diest[str(tupa)] = 1
+        for elemento in diferentes_en_eaping:
+            teleg.enviar_mensaje("Dispositivo nuevamente con acceso: "+str(elemento)+"\n")
+            diest[str(tupa)] = 0
     epping=eaping
+
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

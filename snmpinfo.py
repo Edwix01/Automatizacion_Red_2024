@@ -2,14 +2,14 @@ from pysnmp.entity.rfc3413.oneliner import cmdgen
 
 cmdGen = cmdgen.CommandGenerator()
 
-server_ip="10.0.1.14"
+server_ip="10.0.1.13"
 print ("\nFetching stats for...", server_ip)
 errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
     cmdgen.CommunityData('$1$5.v/c/$'),
     cmdgen.UdpTransportTarget((server_ip, 161)),
     0,25,
     #'1.3.6.1.2.1.17.1.1',
-    '1.3.6.1.2.1.17.2.4'
+    '1.3.6.1.2.1.17.2.15.1.8'
     #'1.3.6.1.2.1.2.2.1.6'
     #'1.3.6.1.2.1.17.4.3.1.1'
 )
