@@ -9,13 +9,15 @@ errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
     cmdgen.UdpTransportTarget((server_ip, 161)),
     0,25,
     #'1.3.6.1.2.1.17.1.1',
-    '1.3.6.1.2.1.17.2.15.1.8'
+    #'1.3.6.1.4.1.9.2.1.58' #Cisco
+    #"1.3.6.1.4.1.25506.2.6.1.1.1.1.6"# HPE
+    "1.3.6.1.4.1.11863.6.4.1.1.1.1.2" #Tpling
+    #"1.3.6.1.2.1.25.3.3.1.2"
     #'1.3.6.1.2.1.2.2.1.6'
     #'1.3.6.1.2.1.17.4.3.1.1'
 )
 c=0
 for varBindTableRow in varBindTable:
     for name, val in varBindTableRow:
-        c+=1
-        print(c)
-        print('%s = Interface Name: %s' % (name.prettyPrint(), val.prettyPrint()))
+            print(name.prettyPrint())
+            print(val.prettyPrint())
