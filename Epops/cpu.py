@@ -1,23 +1,14 @@
-import yaml
 from netmiko import ConnectHandler
 import paramiko
 import time
-import auto_tplink_comandos
+from pysnmp.entity.rfc3413.oneliner import cmdgen
+import leer_cpu
+import re
+import teleg
+import wrinfluxcpu
 
+cmdGen = cmdgen.CommandGenerator()
 
-#######################################################################
-#------------------------#CONEXION NETMIKO#----------------------------
-#######################################################################
-def establecer_conexion(device_info):
-    try:
-        connection = ConnectHandler(**device_info)
-        return connection
-    except Exception as e:
-        print(f"Error conectando a {device_info['ip']}: {e}")
-        return None
-#######################################################################
-#------------------------#CONEXION PARAMIKO#---------------------------
-#######################################################################
 def send_command(channel, command, wait_time=2, max_buffer=65535):
     """
     Envía un comando a través del canal y devuelve la respuesta.
@@ -45,33 +36,13 @@ def interactive_send_command(channel, command, confirmation_text, response, wait
         time.sleep(wait_time)
 
     return channel.recv(9999).decode('utf-8')
-#########################################################################
-#------------------------#COMANDOS CISCO#--------------------------------
-#########################################################################
-#<-----------------------SNMP CONFIGURACION----------------------------->
-def configurar_snmp_cisco(connection, community_name):
-    commands = [
-        f"snmp-server community {community_name} RO",
-    ]
-    connection.send_config_set(commands)
-#<------------------------STP CONFIGURACION----------------------------->
 
-#########################################################################
-#------------------------#COMANDOS HPA5120#------------------------------
-#########################################################################
-#<----------------------SNMP CONFIGURACION------------------------------>
-def configurar_snmp_hp(connection, community_name):
-    commands = [
-        f"snmp-agent community read {community_name}",
-    ]
-    connection.send_config_set(commands)
-#<----------------------STP CONFIGURACION------------------------------->
 
 #########################################################################
 #----------------------------#COMANDOS 3COM#-----------------------------
 #########################################################################
 #-----------------------SNMP CONFIGURCION------------------------------->
-def configurar_snmp_3com(ip, username, password, community_name):
+def comcpu(ip, username, password):
     """
     Función para configurar SNMP en un dispositivo 3Com utilizando Paramiko.
     """
@@ -92,11 +63,71 @@ def configurar_snmp_3com(ip, username, password, community_name):
             wait_time=2  # Tiempo de espera ajustado correctamente.
         )
         # Después de haber entrado en el modo de línea de comandos, continúa con la configuración de SNMP.
-        send_command(channel, "system-view", wait_time=2)
-        send_command(channel, f"snmp-agent community read {community_name}", wait_time=2)
-        ssh.close()
-        print("Configuración de SNMP completada con éxito.")
+        texto = str(send_command(channel, "display cpu-usage", wait_time=2))
+        # Expresión regular para encontrar el valor numérico
+        patron = r'\d+% in last 5 minutes'
+
+        # Buscar el valor numérico
+        resultado = re.search(patron, texto)
+
+        # Extraer el valor numérico
+        if resultado:
+            valor = resultado.group(0).split()[0]
+            v = valor.rstrip('%')
+            ssh.close()
+            return v
+        else:
+            print("No se encontró información para los últimos 5 minutos.")
+
     except Exception as e:
-        print(f"Error al configurar SNMP en {ip}: {e}")
+        print(f"Error {ip}: {e}")
         ssh.close()
 #----------------------------STP CONFIGURACION------------------------------>
+
+def mon_cpu(datos):
+    sal = {}
+    direc = datos.keys()
+    for server_ip in direc:
+        print ("\nFetching stats for...", server_ip)
+        match datos[server_ip]:
+            case "switches_tplink":
+                oid ="1.3.6.1.4.1.11863.6.4.1.1.1.1.2"
+            case "switches_hp":
+                oid = "1.3.6.1.4.1.25506.2.6.1.1.1.1.6"
+            case "switches_3comm":
+                sal[server_ip] = comcpu(server_ip,"networking","Ygvfe34a.2018")
+                continue
+            case "switches_cisco":
+                
+                oid = '1.3.6.1.4.1.9.2.1.58'
+            case _:
+                oid = '1.3.6.1.4.1.9.2.1.58'
+        
+        errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
+            cmdgen.CommunityData('$1$5.v/c/$'),
+            cmdgen.UdpTransportTarget((server_ip, 161)),
+            0,25,
+            oid
+        )
+        c=0
+        for varBindTableRow in varBindTable:
+            for name, val in varBindTableRow:
+                try:
+                    if datos[server_ip] == "switches_hp":
+                        if float(val.prettyPrint())>0:
+                            sal[server_ip] = val.prettyPrint()
+                            print(val.prettyPrint())
+                    else:
+                        sal[server_ip] = val.prettyPrint()
+                        print(val.prettyPrint())
+                except TypeError:
+                    pass
+    return sal
+# Crear el diccionario
+
+diccionario_resultante = leer_cpu.crear_diccionario_host_marca("dispositivos.yaml")
+
+while True:
+    salcpu = mon_cpu(diccionario_resultante)
+    wrinfluxcpu.wr_influx(salcpu)
+    time.sleep(600)
