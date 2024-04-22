@@ -21,7 +21,10 @@ def b_conex(direc,b_id,stp_in):
                         c_i = inf[1][c][1]
                         lc.append((ini+"-"+hex_to_decimal(c_i[-2:]),inj+"-"+c_j))
                     c += 1
+                except IndexError:
+                    pass
                 except KeyError:
                     pass
     return lc
+
 
