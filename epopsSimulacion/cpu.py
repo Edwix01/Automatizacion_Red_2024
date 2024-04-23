@@ -3,6 +3,7 @@ from pysnmp.entity.rfc3413.oneliner import cmdgen
 import leer_cpu
 import re
 import teleg
+import paramiko
 import wrinfluxcpu
 
 cmdGen = cmdgen.CommandGenerator()
@@ -93,7 +94,7 @@ def mon_cpu(datos):
             case "switches_hp":
                 oid = "1.3.6.1.4.1.25506.2.6.1.1.1.1.6"
             case "switches_3comm":
-                sal[server_ip] = comcpu(server_ip,"networking","Ygvfe34a.2018")
+                sal[server_ip] = comcpu(server_ip,"networking","public")
                 continue
             case "switches_cisco":
                 
@@ -102,7 +103,7 @@ def mon_cpu(datos):
                 oid = '1.3.6.1.4.1.9.2.1.58'
         
         errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
-            cmdgen.CommunityData('$1$5.v/c/$'),
+            cmdgen.CommunityData('public'),
             cmdgen.UdpTransportTarget((server_ip, 161)),
             0,25,
             oid
@@ -128,4 +129,4 @@ diccionario_resultante = leer_cpu.crear_diccionario_host_marca("dispositivos.yam
 while True:
     salcpu = mon_cpu(diccionario_resultante)
     wrinfluxcpu.wr_influx(salcpu)
-    time.sleep(600)
+    time.sleep(10)

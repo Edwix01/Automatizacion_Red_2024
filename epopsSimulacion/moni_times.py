@@ -8,6 +8,7 @@ import json
 import con_red
 import wrinflux
 import dtsnmp
+import readuptime
 
 direc = ["10.0.1.1","10.0.1.2","10.0.1.3","10.0.1.4","10.0.1.5"]
 comunidad = "public"
@@ -75,6 +76,7 @@ dinac = {clave: 0 for clave in direc}
 diint = {clave: 0 for clave in direc}
 diest = {clave: 1 for clave in direc}
 disnmp = {clave: 0 for clave in direc}
+dicpu = {clave: 0 for clave in direc}
 
 
 teleg.enviar_mensaje("INICIANDO SISTEMA \n")
@@ -85,6 +87,7 @@ while True:
     diesnmp = []
     faux = 0
     fp = 0
+    infuptime = {} #Diccionario con Tiempos de Actividad
     print("Monitoreando")
 
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--Monitoreo por Ping--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,13 +109,13 @@ while True:
                 diint[i] += 1
     #---------------------------------------
        print("Se bajo conexión")
-       time.sleep(10)
+       time.sleep(5)
        eaping,inactivos,fp = verificar_hosts(direc)
 
 
     #Proceso para contar interrumpciones rapidas
     for x in direc:
-        if dinac[x] >= 5:
+        if dinac[x] >= 4:
             teleg.enviar_mensaje("Se ha tenido Varias interrumpciones con el dispositivo: "+x)
             dinac[x] = 0
 
@@ -143,8 +146,20 @@ while True:
         for elemento in diferentes_en_eaping:
             teleg.enviar_mensaje("Dispositivo nuevamente con acceso: "+str(elemento)+"\n")
             diest[str(elemento)] = 0
+            
     epping=eaping
 
+
+    #%%%%Seccion para monitoreo de Reinicio del Equipo%%%%%%%%%%%%%%%%%%%%
+    infuptime = readuptime.con_uptime(list(eaping))
+    print(dicpu)
+    for i in infuptime.keys():
+        print(i)
+        if (infuptime[i] <= 35000) and (dicpu[i] == 0) :
+            teleg.enviar_mensaje("EL dispositivo" + str(i) + " se reinicio")
+            dicpu[i] = 1
+        elif (infuptime[i] >= 35000):
+            dicpu[i] = 0
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
