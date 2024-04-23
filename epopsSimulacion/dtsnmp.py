@@ -1,7 +1,6 @@
-def snmt(l1,l2):
+def snmt(*lists):
     sal = {}
-    for i in l1.keys():
-        sal[i] = ""
-    for i in l2.keys():
-        sal[i] = ""
+    for lst in lists:
+        for key in lst:
+            sal[key] = ""
     return sal

@@ -7,9 +7,12 @@ import teleg
 import json
 import con_red
 import wrinflux
+import dtsnmp
 
-direc = ["10.0.1.1","10.0.1.2","10.0.1.3","10.0.1.4","10.0.1.5","10.0.1.6"]
+direc = ["10.0.1.1","10.0.1.2","10.0.1.3","10.0.1.4","10.0.1.5"]
 comunidad = "public"
+
+
 
 
 def verificar_hosts(direcciones_ips):
@@ -31,26 +34,10 @@ def verificar_hosts(direcciones_ips):
             f=1
 
     return hosts_activos,hosts_inactivos,f
-
-def mon_stp(direc):
-    a = []
-    for server_ip in direc:
-        errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
-            cmdgen.CommunityData(comunidad),
-            cmdgen.UdpTransportTarget((server_ip, 161)),
-            0,25,
-            '1.3.6.1.2.1.17.2.4'
-        )
-        for varBindTableRow in varBindTable:
-            for name, val in varBindTableRow:
-                #if int(val) <= -1:
-                #  print("La Topologia Cambio")
-                a.append(str(val))
-    return a
-
-
 def mon_int(direc):
     a = []
+    f = 0
+    fif = []
     for server_ip in direc:
         errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.bulkCmd(
             cmdgen.CommunityData(comunidad),
@@ -58,12 +45,15 @@ def mon_int(direc):
             0,25,
             '1.3.6.1.2.1.2.2.1.8'
         )
+        if errorIndication != None:
+           f = 1
+           fif.append(server_ip)
         for varBindTableRow in varBindTable:
             for name, val in varBindTableRow:
                 #if int(val) <= -1:
                 #  print("La Topologia Cambio")
                 a.append(str(val))
-    return a
+    return a,f,fif
 
 # Lista de direcciones IP para verificar
 #Contadores de Control
@@ -77,7 +67,7 @@ epping = []
 cp = [] #COnexiones Pasadas
 
 #Listas de enlaces redundantes
-enr = [] 
+enr = []
 enr1 = []
 
 # Crear un diccionario con claves de la lista y valores iniciales 0
@@ -90,9 +80,11 @@ disnmp = {clave: 0 for clave in direc}
 teleg.enviar_mensaje("INICIANDO SISTEMA \n")
 while True:
     fsnmp = 0
-    f1 = 1
-    f = 0
-    f2 = 0
+    fsi = 0
+    fping = 0 
+    diesnmp = []
+    faux = 0
+    fp = 0
     print("Monitoreando")
 
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--Monitoreo por Ping--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -100,11 +92,13 @@ while True:
        eaping: estado actual - Lista de con dispositivos con ping exitoso
        epping: estado pasado - Lista de con dispositivos con ping exitoso
     """
-    #print(epping)
-    eaping,inactivos,f2 = verificar_hosts(direc)
+    print("")
+    print(" -------------ep,ea Control de monitoreo por PINGS ----------")
+    print(epping)
+    eaping,inactivos,fping = verificar_hosts(direc)
     #print(diest)
     #Perdido de Conexion Mayor a 10seg
-    if f2 == 1:
+    if fping == 1:
     #Proceso para contar interrumpciones rapidas
        for i in inactivos:
            if diest[i] == 0:
@@ -112,50 +106,45 @@ while True:
                 diint[i] += 1
     #---------------------------------------
        print("Se bajo conexión")
-       time.sleep(5)
-       eaping,inactivos,f2 = verificar_hosts(direc)
+       time.sleep(10)
+       eaping,inactivos,fp = verificar_hosts(direc)
 
 
     #Proceso para contar interrumpciones rapidas
     for x in direc:
-        if dinac[x] >= 3:
+        if dinac[x] >= 5:
             teleg.enviar_mensaje("Se ha tenido Varias interrumpciones con el dispositivo: "+x)
             dinac[x] = 0
-            print(ci)
 
     #---------------------------------------
 
     #print(dinac)
-    if ci == 6:
+    if ci == 10:
         dinac = {clave: 0 for clave in direc}
         ci = 0
 
-    #print(eaping)
+    print(eaping)
+    print("------------------------------------------------------------------------------------")
+    print("")
 
     if eaping != epping:
         print("Se comparo lista de pings - Listas Diferentes")
-        f = 1
-        f1 = 0
-        if len(eaping) < len(epping):
-            conjunto1 = {tuple(sorted(tup)) for tup in eaping}
-            conjunto2 = {tuple(sorted(tup)) for tup in epping}
-
-            # Eliminar los elementos de la tupla2 que coinciden con la tupla1
-            tupla2_filtrada = [tup for tup in epping if tuple(sorted(tup)) not in conjunto1]
-            for tupa in tupla2_filtrada:
-                teleg.enviar_mensaje("Dispositivo sin acceso: "+str(tupa)+"\n")
-                diest[str(tupa)] = 1
-
-        if len(eaping) > len(epping):
-            conjunto1 = {tuple(sorted(tup)) for tup in epping}
-            conjunto2 = {tuple(sorted(tup)) for tup in eaping}
-
-            # Eliminar los elementos de la tupla2 que coinciden con la tupla1
-            tupla2_filtrada = [tup for tup in eaping if tuple(sorted(tup)) not in conjunto1]
-            for tupa in tupla2_filtrada:
-                teleg.enviar_mensaje("Dispositivo nuevamente con acceso: "+str(tupa)+"\n")
-                diest[str(tupa)] = 0
+        fp = 1
+        faux = 1
+        # Convertir las listas a conjuntos
+        epping_set = set(epping)
+        eaping_set = set(eaping)
+        # Encontrar los elementos diferentes
+        diferentes_en_epping = epping_set - eaping_set
+        diferentes_en_eaping = eaping_set - epping_set
+        for elemento in diferentes_en_epping:
+            teleg.enviar_mensaje("Dispositivo sin acceso: "+str(elemento)+"\n")
+            diest[str(elemento)] = 1
+        for elemento in diferentes_en_eaping:
+            teleg.enviar_mensaje("Dispositivo nuevamente con acceso: "+str(elemento)+"\n")
+            diest[str(elemento)] = 0
     epping=eaping
+
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -165,16 +154,17 @@ while True:
         epint: estado pasado: Lista con estado de las interfaces de los dispositivos
     """
 
-    if c == 3:
-      ci += 1
-     # print(epint)
-      eaint = mon_int(list(eaping))
-     # print(eaint)
-      if eaint != epint and f1 == 1:
-        print("Se comparo lista de interfaces - Listas Diferentes")
-        f = 1
-      epint=eaint
-      c = 0
+    if c == 5 :
+        ci += 1
+        c = 0
+        if faux == 0:
+        # print(epint)
+            eaint,fsi,diesnmp = mon_int(list(eaping))
+        # print(eaint)
+        if eaint != epint:
+            print("Se comparo lista de interfaces - Listas Diferentes")
+            fp = 1
+        epint=eaint
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--Descubrir Topologia ---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -185,20 +175,25 @@ while True:
         ca: conexiones actuales - Lista de conexiones
     """
 
-    if f == 1:
+    if fp == 1:
         time.sleep(3)
         dfsnmp =[]
         print("Se ejecuto el descubrimiento de Interfaces")
         #print(enr)
         #print(enr1)
-      #  print(cp)
-        ca,fsnmp,dfsnmp = mainepops.main_top(list(eaping))
+        #print(cp)
+        ca,fsnmp,dfsnmp1 = mainepops.main_top(list(eaping))
+        dfsnmp = dtsnmp.snmt(dfsnmp1,diesnmp)
         #print(ca)
         #print("DIccionario SNMP")
-        #print(disnmp)
+        print("")
+        print("-------------------disnp,fsnmp,fsi----Control de error de snmp-----------------------")
+        print(disnmp,fsnmp,fsi)
+        print("------------------------------------------------------------------------------------")
+        print("")
         #print("-"*20)
         #Control de fallas de conexiones con SNMP
-        if fsnmp == 1:
+        if fsnmp == 1 or fsi == 1:
             for i in dfsnmp :
                 if disnmp[i] == 0:
                     dinac[i] += 1
@@ -262,7 +257,6 @@ while True:
                 else:
                     a = "Se perdió la conexión entre los equipos\n"+tupa[0].split("-")[0]+"\n"+tupa[1].split("-")[0]+"\n"
                 teleg.enviar_mensaje(a)
-        f=0
         #Identificacion de enlaces redundantes
         enr,enr1 = con_red.id_red(ca)
     #-----------------------------------------Fin de Descubrimiento de topologia--------------------------------------------------------
@@ -270,4 +264,5 @@ while True:
     cp = ca
     c+=1
     wrinflux.wr_influx(diint)
-    time.sleep(2)  # Pausa la ejecución durante 1 segundo
+    time.sleep(1)  # Pausa la ejecución durante 1 segundo
+
