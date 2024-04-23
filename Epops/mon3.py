@@ -8,6 +8,7 @@ import mainepops
 import teleg
 import obt_infyam
 import dtsnmp
+import readuptime
 
 nombreyaml = "/home/du/Automatizacion_Red_2024/Epops/inventarios/dispositivos.yaml"
 datos = obt_infyam.infyam(nombreyaml)
@@ -76,6 +77,7 @@ dinac = {clave: 0 for clave in direc}
 diint = {clave: 0 for clave in direc}
 diest = {clave: 1 for clave in direc}
 disnmp = {clave: 0 for clave in direc}
+dicpu = {clave: 0 for clave in direc}
 
 
 teleg.enviar_mensaje("INICIANDO SISTEMA \n")
@@ -86,6 +88,7 @@ while True:
     diesnmp = []
     faux = 0
     fp = 0
+    infuptime = {} #Diccionario con Tiempos de Actividad
     print("Monitoreando")
 
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--Monitoreo por Ping--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -107,13 +110,13 @@ while True:
                 diint[i] += 1
     #---------------------------------------
        print("Se bajo conexión")
-       time.sleep(10)
+       time.sleep(5)
        eaping,inactivos,fp = verificar_hosts(direc)
 
 
     #Proceso para contar interrumpciones rapidas
     for x in direc:
-        if dinac[x] >= 5:
+        if dinac[x] >= 4:
             teleg.enviar_mensaje("Se ha tenido Varias interrumpciones con el dispositivo: "+x)
             dinac[x] = 0
 
@@ -144,8 +147,18 @@ while True:
         for elemento in diferentes_en_eaping:
             teleg.enviar_mensaje("Dispositivo nuevamente con acceso: "+str(elemento)+"\n")
             diest[str(elemento)] = 0
+            
     epping=eaping
 
+
+    #%%%%Seccion para monitoreo de Reinicio del Equipo%%%%%%%%%%%%%%%%%%%%
+    infuptime = readuptime.con_uptime(list(eaping))
+    for i in infuptime.keys():
+        if (infuptime[i] <= 35000) and (dicpu[i] == 0) :
+            teleg.enviar_mensaje("EL dispositivo" + str(i) + " se reinicio")
+            dicpu[i] = 1
+        elif (infuptime[i] >= 35000):
+            dicpu[i] = 0
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
