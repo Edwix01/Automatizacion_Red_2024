@@ -154,10 +154,10 @@ while True:
     #%%%%Seccion para monitoreo de Reinicio del Equipo%%%%%%%%%%%%%%%%%%%%
     infuptime = readuptime.con_uptime(list(eaping))
     for i in infuptime.keys():
-        if (infuptime[i] <= 35000) and (dicpu[i] == 0) :
+        if (infuptime[i] <= 22000) and (dicpu[i] == 0) :
             teleg.enviar_mensaje("EL dispositivo" + str(i) + " se reinicio")
             dicpu[i] = 1
-        elif (infuptime[i] >= 35000):
+        elif (infuptime[i] >= 22000):
             dicpu[i] = 0
     #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
