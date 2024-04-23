@@ -6,9 +6,9 @@ data = []
 def wr_influx(datos):
     direc = list(datos.keys())
     for ip in direc:
-        try:
+        try:    
             d1 = {
-                    "measurement": "cpu",
+                    "measurement": "cpupython",
                     "tags": {
                         "dispositivo": str(ip)
                     },
