@@ -1,0 +1,1267 @@
+09:26:13 **** Build of configuration gcc-debug for project veins ****
+make MODE=debug -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+MSGC: veins/common.msg
+MSGC: veins/base/messages/AirFrame.msg
+MSGC: veins/base/messages/BorderMsg.msg
+MSGC: veins/base/messages/MacPkt.msg
+MSGC: veins/base/toolbox/Signal.msg
+MSGC: veins/base/utils/Coord.msg
+MSGC: veins/base/utils/POA.msg
+MSGC: veins/base/utils/SimpleAddress.msg
+MSGC: veins/modules/application/traci/TraCIDemo11pMessage.msg
+MSGC: veins/modules/messages/AckTimeOutMessage.msg
+MSGC: veins/modules/messages/AirFrame11p.msg
+MSGC: veins/modules/messages/BaseFrame1609_4.msg
+MSGC: veins/modules/messages/DemoSafetyMessage.msg
+MSGC: veins/modules/messages/DemoServiceAdvertisement.msg
+MSGC: veins/modules/messages/Mac80211Ack.msg
+MSGC: veins/modules/messages/Mac80211Pkt.msg
+MSGC: veins/modules/messages/PhyControlMessage.msg
+MSGC: veins/modules/messages/TraCITrafficLightMessage.msg
+veins/base/connectionManager/BaseConnectionManager.cc
+veins/base/connectionManager/ChannelAccess.cc
+veins/base/connectionManager/NicEntryDebug.cc
+veins/base/connectionManager/ConnectionManager.cc
+veins/base/connectionManager/NicEntryDirect.cc
+veins/base/modules/BaseApplLayer.cc
+veins/base/modules/BaseBattery.cc
+veins/base/modules/BaseLayer.cc
+veins/base/modules/BaseMacLayer.cc
+veins/base/modules/BaseMobility.cc
+veins/base/modules/BaseModule.cc
+veins/base/modules/BaseWorldUtility.cc
+veins/base/modules/BatteryAccess.cc
+veins/base/phyLayer/Antenna.cc
+veins/base/phyLayer/BaseDecider.cc
+veins/base/phyLayer/BasePhyLayer.cc
+veins/base/phyLayer/ChannelInfo.cc
+veins/base/phyLayer/Decider.cc
+veins/base/phyLayer/PhyUtils.cc
+veins/base/toolbox/Signal.cc
+veins/base/toolbox/SignalUtils.cc
+veins/base/toolbox/Spectrum.cc
+veins/base/utils/Coord.cc
+veins/base/utils/Heading.cc
+veins/base/utils/NedFunctions.cc
+veins/base/utils/NetwToMacControlInfo.cc
+veins/base/utils/SimpleAddress.cc
+veins/base/utils/winsupport.cc
+veins/modules/analogueModel/BreakpointPathlossModel.cc
+veins/modules/analogueModel/NakagamiFading.cc
+veins/modules/analogueModel/PERModel.cc
+veins/modules/analogueModel/SimpleObstacleShadowing.cc
+veins/modules/analogueModel/SimplePathlossModel.cc
+veins/modules/analogueModel/TwoRayInterferenceModel.cc
+veins/modules/analogueModel/VehicleObstacleShadowing.cc
+veins/modules/application/ieee80211p/DemoBaseApplLayer.cc
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemoRSU11p.cc
+veins/modules/mac/ieee80211p/Mac1609_4.cc
+veins/modules/mobility/LinearMobility.cc
+veins/modules/mobility/traci/TraCIBuffer.cc
+veins/modules/mobility/traci/TraCIColor.cc
+veins/modules/mobility/traci/TraCICommandInterface.cc
+veins/modules/mobility/traci/TraCIConnection.cc
+veins/modules/mobility/traci/TraCICoordinateTransformation.cc
+veins/modules/mobility/traci/TraCILauncher.cc
+veins/modules/mobility/traci/TraCIMobility.cc
+veins/modules/mobility/traci/TraCIRegionOfInterest.cc
+veins/modules/mobility/traci/TraCIScenarioManager.cc
+veins/modules/mobility/traci/TraCIScenarioManagerForker.cc
+veins/modules/mobility/traci/TraCIScenarioManagerLaunchd.cc
+veins/modules/mobility/traci/TraCIScreenRecorder.cc
+veins/modules/mobility/traci/TraCIVehicleInserter.cc
+veins/modules/obstacle/MobileHostObstacle.cc
+veins/modules/obstacle/Obstacle.cc
+veins/modules/obstacle/ObstacleControl.cc
+veins/modules/obstacle/VehicleObstacleControl.cc
+veins/modules/phy/Decider80211p.cc
+veins/modules/phy/NistErrorRate.cc
+veins/modules/phy/PhyLayer80211p.cc
+veins/modules/phy/SampledAntenna1D.cc
+veins/modules/utility/BBoxLookup.cc
+veins/modules/utility/HasLogProxy.cc
+veins/modules/utility/TimerManager.cc
+veins/modules/world/annotations/AnnotationDummy.cc
+veins/modules/world/annotations/AnnotationManager.cc
+veins/modules/world/traci/trafficLight/TraCITrafficLightInterface.cc
+veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.cc
+veins/modules/world/traci/trafficLight/logics/TraCITrafficLightAbstractLogic.cc
+veins/modules/world/traci/trafficLight/logics/TraCITrafficLightSimpleLogic.cc
+veins/visualizer/roads/RoadsCanvasVisualizer.cc
+veins/visualizer/roads/RoadsOsgVisualizer.cc
+veins/common_m.cc
+veins/base/messages/AirFrame_m.cc
+veins/base/messages/BorderMsg_m.cc
+veins/base/messages/MacPkt_m.cc
+veins/base/utils/Coord_m.cc
+veins/base/toolbox/Signal_m.cc
+veins/base/utils/POA_m.cc
+veins/base/utils/SimpleAddress_m.cc
+veins/modules/application/traci/TraCIDemo11pMessage_m.cc
+veins/modules/messages/AckTimeOutMessage_m.cc
+veins/modules/messages/AirFrame11p_m.cc
+veins/modules/messages/BaseFrame1609_4_m.cc
+veins/modules/messages/DemoSafetyMessage_m.cc
+veins/modules/messages/DemoServiceAdvertisement_m.cc
+veins/modules/messages/Mac80211Ack_m.cc
+veins/modules/messages/Mac80211Pkt_m.cc
+veins/modules/messages/PhyControlMessage_m.cc
+veins/modules/messages/TraCITrafficLightMessage_m.cc
+Creating shared library: ../out/clang-debug/src/libveins_dbg.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:37:49 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/base/connectionManager/BaseConnectionManager.cc
+veins/base/connectionManager/ChannelAccess.cc
+veins/base/connectionManager/ConnectionManager.cc
+veins/base/connectionManager/NicEntryDebug.cc
+veins/base/connectionManager/NicEntryDirect.cc
+veins/base/modules/BaseApplLayer.cc
+veins/base/modules/BaseBattery.cc
+veins/base/modules/BaseLayer.cc
+veins/base/modules/BaseMacLayer.cc
+veins/base/modules/BaseMobility.cc
+veins/base/modules/BaseModule.cc
+veins/base/modules/BaseWorldUtility.cc
+veins/base/modules/BatteryAccess.cc
+veins/base/phyLayer/Antenna.cc
+veins/base/phyLayer/BaseDecider.cc
+veins/base/phyLayer/BasePhyLayer.cc
+veins/base/phyLayer/ChannelInfo.cc
+veins/base/phyLayer/Decider.cc
+veins/base/phyLayer/PhyUtils.cc
+veins/base/toolbox/Signal.cc
+veins/base/toolbox/SignalUtils.cc
+veins/base/toolbox/Spectrum.cc
+veins/base/utils/Coord.cc
+veins/base/utils/Heading.cc
+veins/base/utils/NedFunctions.cc
+veins/base/utils/NetwToMacControlInfo.cc
+veins/base/utils/SimpleAddress.cc
+veins/base/utils/winsupport.cc
+veins/modules/analogueModel/BreakpointPathlossModel.cc
+veins/modules/analogueModel/NakagamiFading.cc
+veins/modules/analogueModel/PERModel.cc
+veins/modules/analogueModel/SimpleObstacleShadowing.cc
+veins/modules/analogueModel/SimplePathlossModel.cc
+veins/modules/analogueModel/TwoRayInterferenceModel.cc
+veins/modules/analogueModel/VehicleObstacleShadowing.cc
+veins/modules/application/ieee80211p/DemoBaseApplLayer.cc
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemoRSU11p.cc
+veins/modules/mac/ieee80211p/Mac1609_4.cc
+veins/modules/mobility/LinearMobility.cc
+veins/modules/mobility/traci/TraCIBuffer.cc
+veins/modules/mobility/traci/TraCIColor.cc
+veins/modules/mobility/traci/TraCICommandInterface.cc
+veins/modules/mobility/traci/TraCIConnection.cc
+veins/modules/mobility/traci/TraCICoordinateTransformation.cc
+veins/modules/mobility/traci/TraCILauncher.cc
+veins/modules/mobility/traci/TraCIMobility.cc
+veins/modules/mobility/traci/TraCIRegionOfInterest.cc
+veins/modules/mobility/traci/TraCIScenarioManager.cc
+veins/modules/mobility/traci/TraCIScenarioManagerForker.cc
+veins/modules/mobility/traci/TraCIScenarioManagerLaunchd.cc
+veins/modules/mobility/traci/TraCIScreenRecorder.cc
+veins/modules/mobility/traci/TraCIVehicleInserter.cc
+veins/modules/obstacle/MobileHostObstacle.cc
+veins/modules/obstacle/Obstacle.cc
+veins/modules/obstacle/ObstacleControl.cc
+veins/modules/obstacle/VehicleObstacleControl.cc
+veins/modules/phy/Decider80211p.cc
+veins/modules/phy/NistErrorRate.cc
+veins/modules/phy/PhyLayer80211p.cc
+veins/modules/phy/SampledAntenna1D.cc
+veins/modules/utility/BBoxLookup.cc
+veins/modules/utility/HasLogProxy.cc
+veins/modules/utility/TimerManager.cc
+veins/modules/world/annotations/AnnotationDummy.cc
+veins/modules/world/annotations/AnnotationManager.cc
+veins/modules/world/traci/trafficLight/TraCITrafficLightInterface.cc
+veins/modules/world/traci/trafficLight/TraCITrafficLightProgram.cc
+veins/modules/world/traci/trafficLight/logics/TraCITrafficLightAbstractLogic.cc
+veins/modules/world/traci/trafficLight/logics/TraCITrafficLightSimpleLogic.cc
+veins/visualizer/roads/RoadsCanvasVisualizer.cc
+veins/visualizer/roads/RoadsOsgVisualizer.cc
+veins/common_m.cc
+veins/base/messages/AirFrame_m.cc
+veins/base/messages/BorderMsg_m.cc
+veins/base/messages/MacPkt_m.cc
+veins/base/toolbox/Signal_m.cc
+veins/base/utils/Coord_m.cc
+veins/base/utils/POA_m.cc
+veins/base/utils/SimpleAddress_m.cc
+veins/modules/application/traci/TraCIDemo11pMessage_m.cc
+veins/modules/messages/AckTimeOutMessage_m.cc
+veins/modules/messages/AirFrame11p_m.cc
+veins/modules/messages/BaseFrame1609_4_m.cc
+veins/modules/messages/DemoSafetyMessage_m.cc
+veins/modules/messages/DemoServiceAdvertisement_m.cc
+veins/modules/messages/Mac80211Ack_m.cc
+veins/modules/messages/Mac80211Pkt_m.cc
+veins/modules/messages/PhyControlMessage_m.cc
+veins/modules/messages/TraCITrafficLightMessage_m.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:54:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:49:07 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:49:44 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:51:02 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:53:42 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:54:14 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:54:58 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:57:30 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:21:01 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:22:23 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:30:55 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+MSGC: veins/modules/messages/BaseFrame1609_4.msg
+veins/modules/application/ieee80211p/DemoBaseApplLayer.cc
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemoRSU11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:95:34: error: expected expression
+    const int allowedVehicleId = ;  // Cambia este número al ID del vehículo deseado
+                                 ^
+veins/modules/application/traci/TraCIDemo11p.cc:103:33: error: expected ';' after expression
+        std::cout << "Node ID: " allowedVehicleId << " Speed: " << mobility->getVehicleCommandInterface()->getSpeed() << std::endl;
+                                ^
+                                ;
+veins/modules/application/traci/TraCIDemo11p.cc:103:51: error: invalid operands to binary expression ('const int' and 'const char[9]')
+        std::cout << "Node ID: " allowedVehicleId << " Speed: " << mobility->getVehicleCommandInterface()->getSpeed() << std::endl;
+                                 ~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~
+3 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: *** Se espera a que terminen otras tareas....
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+10:31:11 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/mac/ieee80211p/Mac1609_4.cc
+veins/modules/application/traci/TraCIDemo11pMessage_m.cc
+veins/modules/messages/BaseFrame1609_4_m.cc
+veins/modules/messages/DemoSafetyMessage_m.cc
+veins/modules/messages/DemoServiceAdvertisement_m.cc
+veins/modules/application/traci/TraCIDemo11p.cc:95:34: error: expected expression
+    const int allowedVehicleId = ;  // Cambia este número al ID del vehículo deseado
+                                 ^
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: *** Se espera a que terminen otras tareas....
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+10:31:41 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:33:06 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:37:28 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:42:40 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:46:33 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:106:23: error: use of undeclared identifier 'speed'
+        wsm->setSpeed(speed);  // Asignar velocidad al mensaje
+                      ^
+1 error generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+10:46:51 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:48:47 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:50:08 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+10:59:39 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+11:05:52 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:09:31 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:25:
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:57:17: error: redefinition of 'TraCIDemo11pMessage'
+class VEINS_API TraCIDemo11pMessage : public ::veins::BaseFrame1609_4
+                ^
+./veins/modules/application/traci/TraCIDemo11p.h:44:7: note: previous definition is here
+class TraCIDemo11pMessage : public BaseFrame1609_4 {
+      ^
+veins/modules/application/traci/TraCIDemo11p.cc:59:73: error: no member named 'getDemoData' in 'veins::TraCIDemo11pMessage'
+    if (mobility->getRoadId()[0] != ':') traciVehicle->changeRoute(wsm->getDemoData(), 9999);
+                                                                   ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:63:14: error: no member named 'setSenderAddress' in 'veins::TraCIDemo11pMessage'
+        wsm->setSenderAddress(myId);
+        ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:64:14: error: no member named 'setSerial' in 'veins::TraCIDemo11pMessage'
+        wsm->setSerial(3);
+        ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:76:29: error: no member named 'getSerial' in 'veins::TraCIDemo11pMessage'
+        wsm->setSerial(wsm->getSerial() + 1);
+                       ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:76:14: error: no member named 'setSerial' in 'veins::TraCIDemo11pMessage'
+        wsm->setSerial(wsm->getSerial() + 1);
+        ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:78:18: error: no member named 'getSerial' in 'veins::TraCIDemo11pMessage'
+        if (wsm->getSerial() == 3) {
+            ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:85:55: error: no member named 'getSerial' in 'veins::TraCIDemo11pMessage'
+        std::cout << "handleSelfMsg: Serial=" << wsm->getSerial() << ", ChangeRouteFlag=" << (wsm->getChangeRouteFlag() ? "true" : "false") << std::endl;
+                                                 ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:87:18: error: no member named 'getSerial' in 'veins::TraCIDemo11pMessage'
+        if (wsm->getSerial() >= 3) {
+            ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:117:18: error: no member named 'setDemoData' in 'veins::TraCIDemo11pMessage'
+            wsm->setDemoData(mobility->getRoadId().c_str());
+            ~~~  ^
+10 errors generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:10:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:79:18: error: no member named 'setChangeRouteFlag' in 'veins::TraCIDemo11pMessage'
+            wsm->setChangeRouteFlag(true);  // Establecer la bandera solo en el tercer mensaje
+            ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:82:18: error: no member named 'setChangeRouteFlag' in 'veins::TraCIDemo11pMessage'
+            wsm->setChangeRouteFlag(false);  // Asegurarse de que la bandera esté en false en otros mensajes
+            ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:85:100: error: no member named 'getChangeRouteFlag' in 'veins::TraCIDemo11pMessage'
+        std::cout << "handleSelfMsg: Serial=" << wsm->getSerial() << ", ChangeRouteFlag=" << (wsm->getChangeRouteFlag() ? "true" : "false") << std::endl;
+                                                                                              ~~~  ^
+3 errors generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:31:37 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+MSGC: veins/modules/messages/BaseFrame1609_4.msg
+veins/modules/application/ieee80211p/DemoBaseApplLayer.cc
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemoRSU11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:106:13: error: use of undeclared identifier 'count'; did you mean 'cont'?
+            count = count+1;
+            ^~~~~
+            cont
+veins/modules/application/traci/TraCIDemo11p.cc:97:9: note: 'cont' declared here
+    int cont;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:106:21: error: use of undeclared identifier 'count'; did you mean 'cont'?
+            count = count+1;
+                    ^~~~~
+                    cont
+veins/modules/application/traci/TraCIDemo11p.cc:97:9: note: 'cont' declared here
+    int cont;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:107:17: error: use of undeclared identifier 'count'; did you mean 'cont'?
+            if (count == 3){
+                ^~~~~
+                cont
+veins/modules/application/traci/TraCIDemo11p.cc:97:9: note: 'cont' declared here
+    int cont;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:108:25: warning: equality comparison result unused [-Wunused-comparison]
+                reroute == true;
+                ~~~~~~~~^~~~~~~
+veins/modules/application/traci/TraCIDemo11p.cc:108:25: note: use '=' to turn this equality comparison into an assignment
+                reroute == true;
+                        ^~
+                        =
+veins/modules/application/traci/TraCIDemo11p.cc:109:17: error: use of undeclared identifier 'c'
+                c =0;
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:111:25: warning: equality comparison result unused [-Wunused-comparison]
+                reroute == false;
+                ~~~~~~~~^~~~~~~~
+veins/modules/application/traci/TraCIDemo11p.cc:111:25: note: use '=' to turn this equality comparison into an assignment
+                reroute == false;
+                        ^~
+                        =
+veins/modules/application/traci/TraCIDemo11p.cc:121:13: error: use of undeclared identifier 'wsn'; did you mean 'wsm'?
+            wsn->setReroute(reroute);
+            ^~~
+            wsm
+veins/modules/application/traci/TraCIDemo11p.cc:117:34: note: 'wsm' declared here
+            TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+                                 ^
+2 warnings and 5 errors generated.
+make[1]: *** [Makefile:226: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: *** Se espera a que terminen otras tareas....
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:32:34 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/mac/ieee80211p/Mac1609_4.cc
+veins/modules/application/traci/TraCIDemo11pMessage_m.cc
+veins/modules/messages/BaseFrame1609_4_m.cc
+veins/modules/application/traci/TraCIDemo11p.cc:109:17: error: use of undeclared identifier 'c'
+                c =0;
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:121:13: error: use of undeclared identifier 'wsn'; did you mean 'wsm'?
+            wsn->setReroute(reroute);
+            ^~~
+            wsm
+veins/modules/application/traci/TraCIDemo11p.cc:117:34: note: 'wsm' declared here
+            TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+                                 ^
+veins/modules/messages/DemoSafetyMessage_m.cc
+2 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: *** Se espera a que terminen otras tareas....
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:32:52 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/messages/DemoServiceAdvertisement_m.cc
+veins/modules/application/traci/TraCIDemo11p.cc:121:13: error: use of undeclared identifier 'wsn'; did you mean 'wsm'?
+            wsn->setReroute(reroute);
+            ^~~
+            wsm
+veins/modules/application/traci/TraCIDemo11p.cc:117:34: note: 'wsm' declared here
+            TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+                                 ^
+1 error generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:226: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:32:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:121:13: error: use of undeclared identifier 'wsn'; did you mean 'wsm'?
+            wsn->setReroute(reroute);
+            ^~~
+            wsm
+veins/modules/application/traci/TraCIDemo11p.cc:117:34: note: 'wsm' declared here
+            TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+                                 ^
+1 error generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:33:18 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:44:06 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:60:13: error: use of undeclared identifier 'wsn'; did you mean 'wsm'?
+        if (wsn->Reroute()){
+            ^~~
+            wsm
+veins/modules/application/traci/TraCIDemo11p.cc:55:26: note: 'wsm' declared here
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+                         ^
+veins/modules/application/traci/TraCIDemo11p.cc:60:18: error: no member named 'Reroute' in 'veins::TraCIDemo11pMessage'
+        if (wsn->Reroute()){
+            ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:72:1: error: extraneous closing brace ('}')
+}
+^
+3 errors generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:44:23 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:60:13: error: use of undeclared identifier 'wsn'; did you mean 'wsm'?
+        if (wsn->getReroute()){
+            ^~~
+            wsm
+veins/modules/application/traci/TraCIDemo11p.cc:55:26: note: 'wsm' declared here
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+                         ^
+veins/modules/application/traci/TraCIDemo11p.cc:72:1: error: extraneous closing brace ('}')
+}
+^
+2 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:44:35 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:72:1: error: extraneous closing brace ('}')
+}
+^
+1 error generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:45:06 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:48:14 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:51:44 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:56:33 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:00:54 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+17:31:14 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+17:41:37 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+17:43:42 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+17:46:13 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:09:36 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+MSGC: veins/modules/messages/BaseFrame1609_4.msg
+veins/modules/application/ieee80211p/DemoBaseApplLayer.cc
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/TraCIDemoRSU11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/mac/ieee80211p/Mac1609_4.cc
+veins/modules/application/traci/TraCIDemo11pMessage_m.cc
+veins/modules/messages/BaseFrame1609_4_m.cc
+veins/modules/messages/DemoSafetyMessage_m.cc
+veins/modules/messages/DemoServiceAdvertisement_m.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:12:39 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:14:28 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:18:59 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:20:20 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:22:15 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:33:18 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:37:18 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:41:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:43:44 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:44:44 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:48:07 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+18:53:22 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+19:26:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:109:65: error: use of undeclared identifier 'lastMessageTime'
+    if (mobility->getId() == monitoredVehicleId && (simTime() - lastMessageTime >= 5) && count == 0) {
+                                                                ^
+veins/modules/application/traci/TraCIDemo11p.cc:112:9: error: use of undeclared identifier 'lastMessageTime'
+        lastMessageTime = simTime().dbl();
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:128:24: error: reference to non-static member function must be called; did you mean to call it with no arguments?
+    else if (mobility->getId != 17){
+             ~~~~~~~~~~^~~~~
+                            ()
+veins/modules/application/traci/TraCIDemo11p.cc:129:31: error: expected ';' after expression
+        lastDroveAt =simTime()
+                              ^
+                              ;
+4 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+19:28:20 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:109:65: error: use of undeclared identifier 'lastMessageTime'
+    if (mobility->getId() == monitoredVehicleId && (simTime() - lastMessageTime >= 5) && count == 0) {
+                                                                ^
+veins/modules/application/traci/TraCIDemo11p.cc:112:9: error: use of undeclared identifier 'lastMessageTime'
+        lastMessageTime = simTime().dbl();
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:128:24: error: reference to non-static member function must be called; did you mean to call it with no arguments?
+    else if (mobility->getId != 17){
+             ~~~~~~~~~~^~~~~
+                            ()
+veins/modules/application/traci/TraCIDemo11p.cc:129:31: error: expected ';' after expression
+        lastDroveAt =simTime()
+                              ^
+                              ;
+4 errors generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+19:30:26 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:108:55: error: use of undeclared identifier 'lastMessageTime'
+    if (mobility->getId() == 17 && (simTime().dbl() - lastMessageTime >= 5 && contador == 0)){
+                                                      ^
+veins/modules/application/traci/TraCIDemo11p.cc:112:9: error: use of undeclared identifier 'lastMessageTime'
+        lastMessageTime = simTime().dbl();
+        ^
+2 errors generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+19:41:39 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+19:59:00 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+20:03:43 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+20:10:03 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+20:14:49 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+20:20:30 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+20:39:16 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:04:15 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:08:37 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:14:43 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:126:27: error: expected ';' after top level declarator
+double lastMessageTime = 0
+                          ^
+                          ;
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+21:15:15 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:19:27 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:22:33 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:25:51 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:26:25 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:29:26 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:33:50 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+21:52:13 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+22:00:05 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+22:11:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+22:28:53 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+22:41:46 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+22:44:28 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+22:56:28 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+22:57:18 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+23:09:59 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+23:44:14 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+23:51:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+23:57:44 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+00:03:45 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+00:14:51 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+00:36:55 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:146:9: error: use of undeclared identifier 'messageSent'
+        messageSent = false;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:147:9: error: use of undeclared identifier 'lastMoveTime'
+        lastMoveTime = simTime();
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:148:9: error: use of undeclared identifier 'currentServiceId'
+        currentServiceId = -1;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:154:9: error: use of undeclared identifier 'currentServiceId'
+    if (currentServiceId == -1) {
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:156:9: error: use of undeclared identifier 'currentServiceId'
+        currentServiceId = wsa->getPsid();
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:157:13: error: use of undeclared identifier 'offeredServiceId'
+        if (offeredServiceId != wsa->getPsid()) {
+            ^
+veins/modules/application/traci/TraCIDemo11p.cc:177:10: error: use of undeclared identifier 'messageSent'
+    if (!messageSent && routeChangeCount == 0) {
+         ^
+veins/modules/application/traci/TraCIDemo11p.cc:178:9: error: use of undeclared identifier 'messageSent'
+        messageSent = true;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:223:25: error: use of undeclared identifier 'lastMoveTime'
+        if (simTime() - lastMoveTime >= 5) {
+                        ^
+veins/modules/application/traci/TraCIDemo11p.cc:239:9: error: use of undeclared identifier 'lastMoveTime'
+        lastMoveTime = simTime();
+        ^
+10 errors generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+00:39:08 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+00:45:24 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+00:51:51 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+00:58:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+07:36:06 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:142:55: error: expected ';' at end of declaration
+    static std::string restrictedRoute = "523917171#2"
+                                                      ^
+                                                      ;
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+07:36:41 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+07:42:08 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+07:57:04 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+MSGC: veins/modules/messages/BaseFrame1609_4.msg
+veins/modules/application/ieee80211p/DemoBaseApplLayer.cc
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemoRSU11p.cc
+veins/modules/mac/ieee80211p/Mac1609_4.cc
+veins/modules/application/traci/TraCIDemo11pMessage_m.cc
+veins/modules/messages/BaseFrame1609_4_m.cc
+veins/modules/messages/DemoSafetyMessage_m.cc
+veins/modules/messages/DemoServiceAdvertisement_m.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:03:24 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:21:26 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:84:35: error: no viable conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'std::string' (aka 'basic_string<char>')
+        traciVehicle->changeRoute(route, 9999);
+                                  ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:456:7: note: candidate constructor not viable: no known conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'const std::basic_string<char> &' for 1st argument
+      basic_string(const basic_string& __str)
+      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:533:7: note: candidate constructor not viable: no known conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'const char *' for 1st argument
+      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
+      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:565:7: note: candidate constructor not viable: no known conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'std::basic_string<char> &&' for 1st argument
+      basic_string(basic_string&& __str) noexcept
+      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:592:7: note: candidate constructor not viable: no known conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'initializer_list<char>' for 1st argument
+      basic_string(initializer_list<_CharT> __l, const _Alloc& __a = _Alloc())
+      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:448:7: note: explicit constructor is not a candidate
+      basic_string(const _Alloc& __a) _GLIBCXX_NOEXCEPT
+      ^
+./veins/modules/mobility/traci/TraCICommandInterface.h:152:38: note: passing argument to parameter 'roadId' here
+        void changeRoute(std::string roadId, simtime_t travelTime);
+                                     ^
+veins/modules/application/traci/TraCIDemo11p.cc:167:39: error: no viable conversion from 'std::string' (aka 'basic_string<char>') to 'const char *'
+            wsm->setDestinationRoadId(targetRouteId);
+                                      ^~~~~~~~~~~~~
+./veins/modules/messages/BaseFrame1609_4_m.h:108:52: note: passing argument to parameter 'destinationRoadId' here
+    virtual void setDestinationRoadId(const char * destinationRoadId);
+                                                   ^
+2 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:22:20 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:84:35: error: no viable conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'std::string' (aka 'basic_string<char>')
+        traciVehicle->changeRoute(route, 9999);
+                                  ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:456:7: note: candidate constructor not viable: no known conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'const std::basic_string<char> &' for 1st argument
+      basic_string(const basic_string& __str)
+      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:533:7: note: candidate constructor not viable: no known conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'const char *' for 1st argument
+      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
+      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:565:7: note: candidate constructor not viable: no known conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'std::basic_string<char> &&' for 1st argument
+      basic_string(basic_string&& __str) noexcept
+      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:592:7: note: candidate constructor not viable: no known conversion from 'std::list<std::string>' (aka 'list<basic_string<char>>') to 'initializer_list<char>' for 1st argument
+      basic_string(initializer_list<_CharT> __l, const _Alloc& __a = _Alloc())
+      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:448:7: note: explicit constructor is not a candidate
+      basic_string(const _Alloc& __a) _GLIBCXX_NOEXCEPT
+      ^
+./veins/modules/mobility/traci/TraCICommandInterface.h:152:38: note: passing argument to parameter 'roadId' here
+        void changeRoute(std::string roadId, simtime_t travelTime);
+                                     ^
+1 error generated.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+08:24:54 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:30:25 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:40:49 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:43:48 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+MSGC: veins/modules/messages/BaseFrame1609_4.msg
+veins/modules/application/ieee80211p/DemoBaseApplLayer.cc
+veins/modules/application/traci/MyVeinsApp.cc
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemoRSU11p.cc
+veins/modules/mac/ieee80211p/Mac1609_4.cc
+veins/modules/application/traci/TraCIDemo11pMessage_m.cc
+veins/modules/messages/BaseFrame1609_4_m.cc
+veins/modules/messages/DemoSafetyMessage_m.cc
+veins/modules/messages/DemoServiceAdvertisement_m.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:48:10 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+08:55:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:02:00 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:09:05 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:10:28 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:12:06 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:13:14 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:15:03 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:16:19 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:17:42 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:22:53 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+09:32:10 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: se entra en el directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/paola/Documentos/RedesVehiculares/OMNET/tarea1/veins/src'
