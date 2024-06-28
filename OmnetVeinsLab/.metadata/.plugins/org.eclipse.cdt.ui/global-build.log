@@ -1,0 +1,10 @@
+05:06:56 **** Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/OmnetVeinsLab/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/edwin/Documents/OmnetVeinsLab/veins/src'
+20:51:33 **** Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/OmnetVeinsLab/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/edwin/Documents/OmnetVeinsLab/veins/src'
