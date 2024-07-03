@@ -1,0 +1,165 @@
+10:18:45 **** Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:184:9: error: use of undeclared identifier 'senderInfo'
+    if (senderInfo.position.distance(receiverPosition) < 1.0) {
+        ^
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+10:19:57 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:207:5: error: expected unqualified-id
+    else {
+    ^
+veins/modules/application/traci/TraCIDemo11p.cc:210:1: error: extraneous closing brace ('}')
+}
+^
+2 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j4 all" terminated with exit code 2. Build might be incomplete.
+10:20:22 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+10:22:09 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+10:22:59 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+10:27:57 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+10:54:46 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+10:55:24 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+10:56:36 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+10:57:24 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:02:10 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:02:33 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:03:03 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:03:32 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:04:40 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:16:51 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:22:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:27:39 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:27:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:28:27 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:29:13 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:30:40 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:30:47 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:31:25 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:31:49 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
+11:33:30 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j4 all 
+make[1]: Entering directory '/home/edwin/Documents/MensajeWSA/veins/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/edwin/Documents/MensajeWSA/veins/src'
