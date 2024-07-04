@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2024-07-04 00:20:12 by Eclipse SUMO GUI Version v1_19_0+1520-dc4640af2ac
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="/home/edwin/Documents/ProyectoFinal/ModeladoAvHuaynacapac/huaynacapac.net.xml"/>
+        <route-files value="/home/edwin/Documents/ProyectoFinal/ModeladoAvHuaynacapac/rutasflujo.rou.xml"/>
+        <additional-files value="/home/edwin/Documents/ProyectoFinal/ModeladoAvHuaynacapac/huaynacapac.poly.xml,/home/edwin/Documents/ProyectoFinal/ModeladoAvHuaynacapac/detectores.add.xml"/>
+    </input>
+
+    <output>
+        <emission-output value="/home/edwin/Documents/ProyectoFinal/ModeladoAvHuaynacapac/co2.xml"/>
+        <fcd-output value="/home/edwin/Documents/ProyectoFinal/ModeladoAvHuaynacapac/fcd.xml"/>
+        <tripinfo-output value="/home/edwin/Documents/ProyectoFinal/ModeladoAvHuaynacapac/tripinfo.xml"/>
+        <edgedata-output value="/home/edwin/Documents/ProyectoFinal/ModeladoAvHuaynacapac/edgedata.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+        <step-length value="1"/>
+    </time>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <emissions>
+        <device.emissions.probability value="1"/>
+    </emissions>
+
+</configuration>
+-->
+
+<meandata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/meandata_file.xsd">
+    <interval begin="0.00" end="3600.00" id="DEFAULT_EDGEDATA">
+        <edge id="-389741418" sampledSeconds="1617.72" traveltime="3.74" overlapTraveltime="4.14" density="11.62" laneDensity="5.81" occupancy="2.55" waitingTime="0.00" timeLoss="392.29" speed="10.55" speedRelative="0.76" departed="0" arrived="399" entered="399" left="0" laneChangedFrom="0" laneChangedTo="0"/>
+        <edge id="559164160" sampledSeconds="1450.84" traveltime="14.03" overlapTraveltime="14.68" density="3.78" laneDensity="1.89" occupancy="0.91" waitingTime="0.00" timeLoss="116.63" speed="7.61" speedRelative="0.91" departed="0" arrived="100" entered="100" left="0" laneChangedFrom="1" laneChangedTo="1"/>
+        <edge id="893257053" sampledSeconds="12646.58" traveltime="28.19" overlapTraveltime="28.70" density="92.15" laneDensity="46.08" occupancy="22.66" waitingTime="7832.00" timeLoss="10326.38" speed="1.50" speedRelative="0.18" departed="500" arrived="0" entered="0" left="499" laneChangedFrom="401" laneChangedTo="401"/>
+    </interval>
+</meandata>

@@ -1,0 +1,48 @@
+COMANDOS PARA GENERACION DE MAPAS Y TRAFICO BASICO
+
+#########Generar Mapa de Sumo######
+netconvert -v --ramps.guess --remove-edges.isolated --edges.join --geometry.remove --osm-files mapa.osm -o mapa.net.xml
+
+######### Generar poligonos ######
+polyconvert -v --net-file mapa.net.xml --osm-files mapa.osm -o mapa.poly.xml
+
+######### Generar Rutas Aleatorias #######
+python3 /opt/sump/tools/randomTrips.py -v -n mapa.net.xml -r mapa.rou.xml
+python3 /opt/sump/tools/randomTrips.py -v -b 0 -e 3600 -p 36 -n mapa.net.xml -r mapa.rou.xml
+
+#########plantilla base para archivo general de sumo#######
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration> 
+    <input>
+        <net-file value="map.net.xml"/>
+        <route-files value="map.rou.xml"/>
+        <additional-files value="map.poly.xml"/>
+    </input>    
+    
+    <output>
+        <emission-output value="co2.xml"/>
+    	<tripinfo-output value="tripinfo.xml"/>
+    	<fcd-output value="fcd.xml"/>
+    	<edgedata-output value="edgedata.xml"/>
+     </output>
+
+<emissions>
+	<device.emissions.probability value="1"/>
+</emissions>
+
+    
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>    
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+        <step-length value="1"/>
+    </time>
+</configuration> 
+
+
+
+
+
+netconvert -v --ramps.guess --remove-edges.isolated --edges.join --geometry.remove --osm-files mapa.osm -o mapa.net.xml
