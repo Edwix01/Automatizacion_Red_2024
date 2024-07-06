@@ -1,6 +1,6 @@
 <flows>
 	<vType id="auto" vClass="passenger" color="red" speedFactor="1"/>
 	<interval begin="0" end="3600">
-		<flow id="a2" from="893257053" number="475" type="auto" departLane="free"/>
+		<flow id="a1" from="337277984#6" number="475" type="auto" departLane="free"/>
 	</interval>
 </flows>

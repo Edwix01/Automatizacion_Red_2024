@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-07-04 08:34:17 by Eclipse SUMO GUI Version v1_19_0+1520-dc4640af2ac
+<!-- generated on 2024-07-06 15:10:27 by Eclipse SUMO sumo Version v1_19_0+1520-dc4640af2ac
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/huaynacapac.net.xml"/>
-        <route-files value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/mapa.rou.xml"/>
-        <additional-files value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/huaynacapac.poly.xml,/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/detectores.add.xml"/>
+        <net-file value="huaynacapac.net.xml"/>
+        <route-files value="mapa.rou.xml"/>
+        <additional-files value="huaynacapac.poly.xml,detectores.add.xml"/>
     </input>
 
     <output>
-        <emission-output value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/co2.xml"/>
-        <fcd-output value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/fcd.xml"/>
-        <tripinfo-output value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/tripinfo.xml"/>
-        <edgedata-output value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/edgedata.xml"/>
+        <emission-output value="co2.xml"/>
+        <fcd-output value="fcd.xml"/>
+        <tripinfo-output value="tripinfo.xml"/>
+        <edgedata-output value="edgedata.xml"/>
     </output>
 
     <time>
@@ -25,6 +25,10 @@
     <processing>
         <ignore-route-errors value="true"/>
     </processing>
+
+    <report>
+        <verbose value="true"/>
+    </report>
 
     <emissions>
         <device.emissions.probability value="1"/>

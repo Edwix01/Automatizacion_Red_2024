@@ -1,0 +1,16 @@
+<configuration>
+    <input>
+        <net-file value="huaynacapac.net.xml"/>
+        <route-files value="flowsp1.xml"/>
+        <turn-ratio-files value="turns2.xml"/>
+    </input>
+    <output>
+        <output-file value="rp.rou.xml"/>
+    </output>
+    <processing>
+        <randomize-flows value="true"/>
+	<remove-loops value="true"/>
+        <ignore-errors value="true"/>
+    </processing>
+</configuration>
+
