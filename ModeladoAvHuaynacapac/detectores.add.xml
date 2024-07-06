@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-07-06 15:08:34 by Eclipse SUMO netedit Version v1_19_0+1520-dc4640af2ac
+<!-- generated on 2024-07-06 15:44:18 by Eclipse SUMO netedit Version v1_19_0+1520-dc4640af2ac
 -->
 
 <additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
@@ -179,8 +179,8 @@
     </entryExitDetector>
     <entryExitDetector id="SA3" pos="1886.83,1439.44" period="300.00" file="SA3.xml">
         <detEntry lane="552651836_0" pos="89.00"/>
-        <detExit lane="48202930_0" pos="10.00"/>
-        <detExit lane="48202930_1" pos="10.00"/>
+        <detExit lane="303057278_0" pos="5.00"/>
+        <detExit lane="303057278_1" pos="5.00"/>
     </entryExitDetector>
     <entryExitDetector id="VA1" pos="1862.07,657.38" period="300.00" file="VA1.xml">
         <detEntry lane="940158936#2_0" pos="60.00"/>
