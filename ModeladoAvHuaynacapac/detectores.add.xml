@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-07-06 15:44:18 by Eclipse SUMO netedit Version v1_19_0+1520-dc4640af2ac
+<!-- generated on 2024-07-08 22:32:58 by Eclipse SUMO netedit Version v1_19_0+1520-dc4640af2ac
 -->
 
 <additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
@@ -132,6 +132,42 @@
         <detExit lane="389741419_1" pos="10.00"/>
         <detEntry lane="337277984#6_1" pos="132.00"/>
         <detEntry lane="337277984#6_0" pos="132.00"/>
+    </entryExitDetector>
+    <entryExitDetector id="NUA1" pos="1893.34,1585.58" period="300.00" file="NUA1.xml">
+        <detExit lane="399285450#0_0" pos="15.00"/>
+        <detExit lane="399285450#0_1" pos="15.00"/>
+        <detEntry lane="48202925#1_0" pos="75.00"/>
+        <detEntry lane="48202925#1_1" pos="75.00"/>
+    </entryExitDetector>
+    <entryExitDetector id="NUA2" pos="1923.20,1591.62" period="300.00" file="NUA2.xml">
+        <detExit lane="552654210_1" pos="15.00"/>
+        <detExit lane="552654210_0" pos="15.00"/>
+        <detEntry lane="48202925#1_0" pos="75.00"/>
+        <detEntry lane="48202925#1_1" pos="75.00"/>
+    </entryExitDetector>
+    <entryExitDetector id="NUA3" pos="1901.52,1577.76" period="300.00" file="NUA3.xml">
+        <detExit lane="48202933_0" pos="15.00"/>
+        <detExit lane="48202933_1" pos="15.00"/>
+        <detEntry lane="48202925#1_0" pos="75.00"/>
+        <detEntry lane="48202925#1_1" pos="75.00"/>
+    </entryExitDetector>
+    <entryExitDetector id="PA2" pos="1932.59,1711.83" period="300.00" file="PA2.xml">
+        <detEntry lane="399285452#3_1" pos="35.00"/>
+        <detEntry lane="399285452#3_0" pos="35.00"/>
+        <detExit lane="542435213_1" pos="10.00"/>
+        <detExit lane="542435213_0" pos="10.00"/>
+    </entryExitDetector>
+    <entryExitDetector id="PA3" pos="1901.41,1691.68" period="300.00" file="PA3.xml">
+        <detEntry lane="399285452#3_1" pos="35.00"/>
+        <detEntry lane="399285452#3_0" pos="35.00"/>
+        <detExit lane="542440756_0" pos="10.00"/>
+        <detExit lane="542440756_1" pos="10.00"/>
+    </entryExitDetector>
+    <entryExitDetector id="PC1" pos="1905.46,1685.16" period="300.00" file="PC1.xml">
+        <detExit lane="542440756_0" pos="9.33"/>
+        <detExit lane="542440756_1" pos="9.22"/>
+        <detEntry lane="542435212_0" pos="20.00"/>
+        <detEntry lane="542435212_1" pos="20.00"/>
     </entryExitDetector>
     <entryExitDetector id="RA1" pos="1866.56,1121.92" period="300.00" file="RA1.xml">
         <detEntry lane="48909342#5_0" pos="90.00"/>
