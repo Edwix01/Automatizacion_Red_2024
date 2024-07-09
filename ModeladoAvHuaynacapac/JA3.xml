@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2024-07-08 22:11:40 by Eclipse SUMO GUI Version v1_19_0+1520-dc4640af2ac
+<!-- generated on 2024-07-09 14:23:11 by Eclipse SUMO sumo Version v1_19_0+1520-dc4640af2ac
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/huaynacapac.net.xml"/>
-        <route-files value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/mapa.rou.xml"/>
-        <additional-files value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/huaynacapac.poly.xml,/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/detectores.add.xml"/>
+        <net-file value="avhuaynacapac.net.xml"/>
+        <route-files value="avhuaynacapac.rou.xml"/>
+        <additional-files value="avhuaynacapac.poly.xml,detectores.add.xml"/>
     </input>
 
     <output>
-        <emission-output value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/co2.xml"/>
-        <fcd-output value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/fcd.xml"/>
-        <tripinfo-output value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/tripinfo.xml"/>
-        <edgedata-output value="/home/edwin/Documents/Repositorio-EdwinTel2024/ModeladoAvHuaynacapac/edgedata.xml"/>
+        <emission-output value="co2.xml"/>
+        <fcd-output value="fcd.xml"/>
+        <tripinfo-output value="tripinfo.xml"/>
+        <edgedata-output value="edgedata.xml"/>
     </output>
 
     <time>
@@ -26,6 +26,10 @@
         <ignore-route-errors value="true"/>
     </processing>
 
+    <report>
+        <verbose value="true"/>
+    </report>
+
     <emissions>
         <device.emissions.probability value="1"/>
     </emissions>
@@ -34,4 +38,16 @@
 -->
 
 <e3Detector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/det_e3_file.xsd">
+   <interval begin="0.00" end="300.00" id="JA3" meanTravelTime="-1.00" meanOverlapTravelTime="-1.00" meanSpeed="-1.00" meanHaltsPerVehicle="-1.00" meanTimeLoss="-1.00" vehicleSum="0" meanSpeedWithin="7.20" meanHaltsPerVehicleWithin="1.50" meanDurationWithin="65.11" vehicleSumWithin="2" meanIntervalSpeedWithin="7.20" meanIntervalHaltsPerVehicleWithin="1.50" meanIntervalDurationWithin="65.11" meanTimeLossWithin="31.87"/>
+   <interval begin="300.00" end="600.00" id="JA3" meanTravelTime="3.60" meanOverlapTravelTime="4.06" meanSpeed="8.61" meanHaltsPerVehicle="0.00" meanTimeLoss="0.91" vehicleSum="1" meanSpeedWithin="6.47" meanHaltsPerVehicleWithin="2.00" meanDurationWithin="101.48" vehicleSumWithin="2" meanIntervalSpeedWithin="6.47" meanIntervalHaltsPerVehicleWithin="2.00" meanIntervalDurationWithin="101.48" meanTimeLossWithin="47.80"/>
+   <interval begin="600.00" end="900.00" id="JA3" meanTravelTime="3.92" meanOverlapTravelTime="4.37" meanSpeed="7.32" meanHaltsPerVehicle="0.00" meanTimeLoss="1.08" vehicleSum="1" meanSpeedWithin="3.98" meanHaltsPerVehicleWithin="1.50" meanDurationWithin="57.41" vehicleSumWithin="4" meanIntervalSpeedWithin="3.98" meanIntervalHaltsPerVehicleWithin="1.50" meanIntervalDurationWithin="57.41" meanTimeLossWithin="38.69"/>
+   <interval begin="900.00" end="1200.00" id="JA3" meanTravelTime="-1.00" meanOverlapTravelTime="-1.00" meanSpeed="-1.00" meanHaltsPerVehicle="-1.00" meanTimeLoss="-1.00" vehicleSum="0" meanSpeedWithin="3.41" meanHaltsPerVehicleWithin="0.67" meanDurationWithin="26.21" vehicleSumWithin="3" meanIntervalSpeedWithin="3.41" meanIntervalHaltsPerVehicleWithin="0.67" meanIntervalDurationWithin="26.21" meanTimeLossWithin="12.02"/>
+   <interval begin="1200.00" end="1500.00" id="JA3" meanTravelTime="3.62" meanOverlapTravelTime="4.07" meanSpeed="8.22" meanHaltsPerVehicle="0.00" meanTimeLoss="0.81" vehicleSum="1" meanSpeedWithin="4.15" meanHaltsPerVehicleWithin="2.86" meanDurationWithin="147.17" vehicleSumWithin="7" meanIntervalSpeedWithin="4.15" meanIntervalHaltsPerVehicleWithin="2.86" meanIntervalDurationWithin="147.17" meanTimeLossWithin="102.01"/>
+   <interval begin="1500.00" end="1800.00" id="JA3" meanTravelTime="-1.00" meanOverlapTravelTime="-1.00" meanSpeed="-1.00" meanHaltsPerVehicle="-1.00" meanTimeLoss="-1.00" vehicleSum="0" meanSpeedWithin="1.66" meanHaltsPerVehicleWithin="2.67" meanDurationWithin="210.35" vehicleSumWithin="3" meanIntervalSpeedWithin="1.58" meanIntervalHaltsPerVehicleWithin="2.00" meanIntervalDurationWithin="199.72" meanTimeLossWithin="178.57"/>
+   <interval begin="1800.00" end="2100.00" id="JA3" meanTravelTime="-1.00" meanOverlapTravelTime="-1.00" meanSpeed="-1.00" meanHaltsPerVehicle="-1.00" meanTimeLoss="-1.00" vehicleSum="0" meanSpeedWithin="6.12" meanHaltsPerVehicleWithin="1.50" meanDurationWithin="96.70" vehicleSumWithin="10" meanIntervalSpeedWithin="6.12" meanIntervalHaltsPerVehicleWithin="1.50" meanIntervalDurationWithin="96.70" meanTimeLossWithin="52.21"/>
+   <interval begin="2100.00" end="2400.00" id="JA3" meanTravelTime="6.45" meanOverlapTravelTime="7.02" meanSpeed="5.01" meanHaltsPerVehicle="0.50" meanTimeLoss="3.10" vehicleSum="2" meanSpeedWithin="6.55" meanHaltsPerVehicleWithin="1.43" meanDurationWithin="83.93" vehicleSumWithin="7" meanIntervalSpeedWithin="6.55" meanIntervalHaltsPerVehicleWithin="1.43" meanIntervalDurationWithin="83.93" meanTimeLossWithin="49.41"/>
+   <interval begin="2400.00" end="2700.00" id="JA3" meanTravelTime="-1.00" meanOverlapTravelTime="-1.00" meanSpeed="-1.00" meanHaltsPerVehicle="-1.00" meanTimeLoss="-1.00" vehicleSum="0" meanSpeedWithin="4.48" meanHaltsPerVehicleWithin="2.29" meanDurationWithin="121.51" vehicleSumWithin="7" meanIntervalSpeedWithin="4.48" meanIntervalHaltsPerVehicleWithin="2.29" meanIntervalDurationWithin="121.17" meanTimeLossWithin="84.79"/>
+   <interval begin="2700.00" end="3000.00" id="JA3" meanTravelTime="-1.00" meanOverlapTravelTime="-1.00" meanSpeed="-1.00" meanHaltsPerVehicle="-1.00" meanTimeLoss="-1.00" vehicleSum="0" meanSpeedWithin="4.64" meanHaltsPerVehicleWithin="0.75" meanDurationWithin="52.72" vehicleSumWithin="4" meanIntervalSpeedWithin="4.64" meanIntervalHaltsPerVehicleWithin="0.75" meanIntervalDurationWithin="52.72" meanTimeLossWithin="26.88"/>
+   <interval begin="3000.00" end="3300.00" id="JA3" meanTravelTime="30.93" meanOverlapTravelTime="31.40" meanSpeed="1.05" meanHaltsPerVehicle="1.00" meanTimeLoss="27.84" vehicleSum="1" meanSpeedWithin="5.56" meanHaltsPerVehicleWithin="1.71" meanDurationWithin="73.57" vehicleSumWithin="7" meanIntervalSpeedWithin="5.56" meanIntervalHaltsPerVehicleWithin="1.71" meanIntervalDurationWithin="73.57" meanTimeLossWithin="42.02"/>
+   <interval begin="3300.00" end="3600.00" id="JA3" meanTravelTime="4.86" meanOverlapTravelTime="5.42" meanSpeed="6.04" meanHaltsPerVehicle="0.00" meanTimeLoss="1.22" vehicleSum="1" meanSpeedWithin="3.89" meanHaltsPerVehicleWithin="1.50" meanDurationWithin="57.25" vehicleSumWithin="4" meanIntervalSpeedWithin="3.89" meanIntervalHaltsPerVehicleWithin="1.50" meanIntervalDurationWithin="57.25" meanTimeLossWithin="37.63"/>
 </e3Detector>
