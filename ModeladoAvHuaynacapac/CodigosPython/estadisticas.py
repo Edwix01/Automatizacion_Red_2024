@@ -1,44 +1,76 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-# Función para leer el archivo CSV y graficar columnas específicas en subplots
-def graficar_columnas_subplots(archivo_csv, nombres_columnas):
-    # Leer el archivo CSV
-    df = pd.read_csv(archivo_csv)
-
-    # Verificar si las columnas existen en el DataFrame
-    for nombre_columna in nombres_columnas:
-        if nombre_columna not in df.columns:
-            print(f"La columna '{nombre_columna}' no existe en el archivo CSV.")
-            return
-
-    # Graficar las columnas especificadas en subplots
-    num_columnas = len(nombres_columnas)
-    fig, axes = plt.subplots(num_columnas, 1, figsize=(10, 6 * num_columnas), sharex=True)
-
-    if num_columnas == 1:
-        axes = [axes]  # Asegurarse de que 'axes' sea iterable si hay solo un subplot
-
-    for ax, nombre_columna in zip(axes, nombres_columnas):
-        ax.plot(df[nombre_columna], marker='o', linestyle='-', label=nombre_columna)
-        ax.set_title(f'Gráfica de la columna: {nombre_columna}')
-        ax.set_xlabel('Índice')
-        ax.set_ylabel(nombre_columna)
-        ax.grid(True)
-        ax.legend()
-
-    plt.tight_layout()
+plt.rcParams['font.family'] = 'STIXGeneral'  # STIX general es similar a la fuente de LaTeX
+def graficar_m(datos,labelmetrica,labeltiempo):
+        # Crear la gráfica
+    plt.figure(figsize=(10, 6))
+    x = datos[labeltiempo]
+    y = datos[labelmetrica]
+    plt.plot(x,y, 'o',label=labelmetrica, color='b')
+    plt.vlines(x, ymin=0, ymax=y, color='blue', linestyle='dashed')
+    # Añadir título y etiquetas a los ejes
+    plt.title('Gráfica de la función de la métrica '+labelmetrica)
+    plt.xlabel('Tiempo[Horas]')
+    plt.ylabel('Métrica')
+    # Añadir una leyenda
+    plt.legend()
+    # Mostrar la gráfica
+    plt.grid(True)
     plt.show()
 
-# Ruta del archivo
+def graficar_v(datos):
+        # Crear la gráfica
+    plt.figure(figsize=(10, 6))
+    y = datos['vehicle_id']
+    x = datos['timestep_time']
+    plt.plot(x,y, 'o', label="# de Vehiculos", color='b')
+    # Añadir líneas verticales desde el eje x hasta cada punto
+    plt.vlines(x, ymin=0, ymax=y, color='blue', linestyle='dashed')
+
+    # Añadir título y etiquetas a los ejes
+    plt.title('Gráfica del número de vehiculos generados')
+    plt.xlabel('Tiempo[Horas]')
+    plt.ylabel('# de Vehiculos')
+    # Añadir una leyenda
+    plt.legend()
+    # Mostrar la gráfica
+    plt.grid(True)
+    plt.show()
+
+# Función para leer el archivo CSV y graficar columnas específicas en subplots
+def obt_metricas_tiempo(metrica_csv,vehiculos_csv,lblmetrica,tiempo):
+    # Leer el archivo CSV
+    dnv = pd.read_csv(vehiculos_csv)
+    dfm = pd.read_csv(metrica_csv)
+    dfm = dfm.sort_values(by='tripinfo_depart', ascending=False)
+    metrica = dfm.groupby(dfm['tripinfo_depart'] // tiempo * tiempo)[lblmetrica].mean().reset_index()
+    dfnv = dnv.sort_values(by='timestep_time', ascending=False)
+    n_vehiculos = dfnv.groupby(dfnv['timestep_time'] // tiempo * tiempo)['vehicle_id'].nunique().reset_index()
+    graficar_m(metrica,lblmetrica,'tripinfo_depart')
+    graficar_v(n_vehiculos)
+
+# Ruta del los archivos de salida de SUMO - No cambiar
 ruta_actual = os.path.abspath(__file__)
 directorio_anterior = os.path.dirname(ruta_actual)
 ruta_final = os.path.dirname(directorio_anterior)
-archivo_csv = os.path.join(ruta_final, "tripinfo.csv")
+metrica_csv = os.path.join(ruta_final, "tripinfo.csv")
+vehiculo_csv = os.path.join(ruta_final, "fcd.csv")
 
-# Lista de nombres de columnas a graficar
-nombres_columnas = ['tripinfo_waitingTime', 'tripinfo_duration', 'tripinfo_routeLength']
+#Ejecución del Código
 
+#Métricas que se pueden visualizar
+"""
+tiempos de viaje :      tripinfo_duration
+distancias de rutas :   tripinfo_routeLength
+t. espera en semáforos: tripinfo_waitingTime
+conteo de vehículos
+"""
+
+#Parámetros para graficar
+met = "tripinfo_duration"    #Métrica que se desea visualizar
+intervalo = 120              #Intervalo de tiempo de análisis
 # Llamar a la función para graficar las columnas en subplots
-graficar_columnas_subplots(archivo_csv, nombres_columnas)
+obt_metricas_tiempo(metrica_csv, vehiculo_csv, met,intervalo)
