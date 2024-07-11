@@ -1,0 +1,18 @@
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <busStop id="bs_0" name="MariscalLamar" lane="48202930_0" startPos="72.71" endPos="82.71" friendlyPos="true" lines="2, 7, 10, 26, 26C" personCapacity="9" color="109,0,255"/>
+    <busStop id="bs_1" name="SanBlas" lane="389741417#1_0" startPos="39.89" endPos="49.89" friendlyPos="true" lines="2, 7, 10, 15, 22, 26, 26C" personCapacity="10" color="109,0,255"/>
+    <busStop id="bs_10" name="GonzalesSuarez" lane="398532019#2_0" startPos="70.93" endPos="80.93" friendlyPos="true" lines="15" personCapacity="5" color="109,0,255"/>
+    <busStop id="bs_11" name="Aprofe" lane="118664583#0_0" startPos="47.36" endPos="57.36" lines="24" friendlyPos="true" personCapacity="4" color="109,0,255"/>
+    <busStop id="bs_12" name="JoseJoaquinOlmedo" lane="48583899#0_2" startPos="62.03" endPos="72.03" friendlyPos="true" lines="2, 7, 22" personCapacity="10" color="109,0,255"/>
+    <busStop id="bs_2" name="TeresaValse" lane="48202922_0" startPos="71.11" endPos="81.11" friendlyPos="true" lines="2, 7, 10, 15, 22, 26, 26C" personCapacity="8" color="109,0,255"/>
+    <busStop id="bs_3" name="BancoCentral" lane="60204530_0" startPos="28.40" endPos="38.40" friendlyPos="true" lines="2, 7, 10, 15, 22, 26, 14, 14SMV, 14G, 14SP, 26C" personCapacity="10" color="109,0,255"/>
+    <busStop id="bs_4" name="NunesBonilla" lane="542434369#0_0" startPos="172.27" endPos="182.27" friendlyPos="true" lines="2, 7, 10, 26, 26C" personCapacity="5" color="109,0,255"/>
+    <busStop id="bs_5" name="MiguelAngelEstrella" lane="42143918#12_0" startPos="55.11" endPos="65.11" friendlyPos="true" lines="14, 14SM, 14G, 14SP" personCapacity="5" color="109,0,255"/>
+    <busStop id="bs_6" name="PresidenteRocafuerte" lane="45421575#2_0" startPos="82.29" endPos="92.29" friendlyPos="true" lines="15" personCapacity="5" color="109,0,255"/>
+    <busStop id="bs_7" name="AlfonsoMalo" lane="-389741418_0" startPos="16.29" endPos="26.29" friendlyPos="true" lines="2, 7, 15, 22, 24" personCapacity="12" color="109,0,255"/>
+    <busStop id="bs_8" name="HonoratoVasquez" lane="-48202922_0" startPos="28.99" endPos="38.99" friendlyPos="true" lines="2, 7, 15, 22, 24" personCapacity="9" color="109,0,255"/>
+    <busStop id="bs_9" name="LaRepublica" lane="-389741417#1_0" startPos="49.87" endPos="59.87" friendlyPos="true" lines="2, 7, 15, 22, 24" personCapacity="11" color="109,0,255"/>
+</additional>
+
+
