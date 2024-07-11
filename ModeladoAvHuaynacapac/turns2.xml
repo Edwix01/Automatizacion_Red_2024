@@ -1,9 +1,0 @@
-<turns>
-   <interval begin="0" end="3600">
-	   <fromEdge id='337277984#6'>
-		   <toEdge id='389741419' probability ='0.53684'/> 
-		   <toEdge id='118664583#0' probability ='0.33684'/>
-		   <toEdge id='-389741417#1' probability ='0.12632'/>
-	   </fromEdge>
-   </interval>
-</turns>
