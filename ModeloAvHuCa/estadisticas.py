@@ -45,6 +45,7 @@ def obt_metricas_tiempo(metrica_csv,vehiculos_csv,lblmetrica,tiempo):
     # Leer el archivo CSV
     dnv = pd.read_csv(vehiculos_csv)
     dfm = pd.read_csv(metrica_csv)
+    print(dfm)
     dfm = dfm.sort_values(by='tripinfo_depart', ascending=False)
     metrica = dfm.groupby(dfm['tripinfo_depart'] // tiempo * tiempo)[lblmetrica].mean().reset_index()
     dfnv = dnv.sort_values(by='timestep_time', ascending=False)
@@ -69,7 +70,7 @@ conteo de vehículos
 """
 
 #Parámetros para graficar
-met = "tripinfo_duration"    #Métrica que se desea visualizar
+met = "tripinfo_waitingTime"    #Métrica que se desea visualizar
 intervalo = 3600              #Intervalo de tiempo de análisis
 # Llamar a la función para graficar las columnas en subplots
 obt_metricas_tiempo(metrica_csv, vehiculo_csv, met,intervalo)
